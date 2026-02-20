@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LocUS | UPenn</title>
+    <meta name="description"
+        content="A curated menu of UPenn projects on room impulse responses (RIR), acoustic field modeling, and audio-visual digital twins." />
+    <style>
+        :root {
+            --bg: #f7f8fb;
+            --panel: #ffffff;
+            --panel2: #f1f3f8;
+            --text: #0f172a;
+            --muted: #475569;
+            --faint: #64748b;
+            --border: rgba(15, 23, 42, 0.10);
+            --accent: #2563eb;
+            --accent2: #22c55e;
+            --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+            --radius: 18px;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--sans);
+            background:
+                radial-gradient(1200px 600px at 10% 0%, rgba(37, 99, 235, 0.04), transparent 60%),
+                radial-gradient(900px 500px at 90% 10%, rgba(34, 197, 94, 0.08), transparent 100%),
+                radial-gradient(900px 600px at 50% 90%, rgba(59, 130, 246, 0.06), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:hover {
+            color: var(--accent)
+        }
+
+        .wrap {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 18px 64px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            border-radius: 999px;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 220px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
+            flex: none;
+        }
+
+        .brand .title {
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            justify-content: flex-end;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .pill {
+            padding: 7px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--panel2);
+            transition: transform .15s ease, background .15s ease, border-color .15s ease;
+            white-space: nowrap;
+        }
+
+        .pill:hover {
+            transform: translateY(-1px);
+            background: #eef2ff;
+            border-color: rgba(37, 99, 235, 0.35);
+            color: #1e293b;
+        }
+
+        header.hero {
+            margin-top: 26px;
+            padding: 26px 22px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, #ffffff, #f6f7fb);
+            box-shadow: var(--shadow);
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .kicker .bar {
+            width: 34px;
+            height: 1px;
+            background: rgba(15, 23, 42, 0.25);
+        }
+
+        h1 {
+            margin: 10px 0 10px;
+            font-size: clamp(26px, 3.2vw, 40px);
+            line-height: 1.12;
+            letter-spacing: -0.6px;
+        }
+
+        .sub {
+            margin: 0;
+            color: var(--muted);
+            max-width: 78ch;
+            font-size: 15.5px;
+        }
+
+        .note {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--faint);
+            font-size: 13px;
+        }
+
+        .note code {
+            font-family: var(--mono);
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 7px;
+            border: 1px solid var(--border);
+            background: #eef2ff;
+            color: #1e293b;
+        }
+
+        .grid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .section-title {
+            grid-column: span 12;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 6px 2px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: clamp(20px, 2.4vw, 28px);
+            letter-spacing: -0.3px;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .card {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: minmax(360px, 46%) 1fr;
+            grid-template-areas:
+                "figure head"
+                "figure body"
+                "figure divider"
+                "figure actions";
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--panel);
+            overflow: hidden;
+            position: relative;
+            transition: transform .18s ease, border-color .18s ease, background .18s ease;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(37, 99, 235, 0.35);
+            background: #ffffff;
+        }
+
+        .card .head {
+            grid-area: head;
+            padding: 18px 18px 10px 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .tag {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: #1f2937;
+            border: 1px solid var(--border);
+            background: #eef2ff;
+            padding: 6px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex: none;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: -0.2px;
+        }
+
+        .card .body {
+            grid-area: body;
+            padding: 0 18px 14px 12px;
+            color: var(--muted);
+            font-size: 14.5px;
+        }
+
+        /* .card figure {
+            grid-area: figure;
+            margin: 0;
+            padding: 18px 12px 18px 18px;
+        }
+
+        .card figure img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            object-fit: contain;
+            aspect-ratio: 4 / 3;
+            min-height: 220px;
+            background: #f1f5f9;
+        } */
+
+        .card figure {
+            grid-area: figure;
+            margin: 0;
+            padding: 16px 10px 16px 16px;
+            /* slightly tighter */
+            display: flex;
+            align-items: center;
+        }
+
+        .card figure img {
+            width: 100%;
+            height: auto;
+            /* key: no forced height */
+            display: block;
+
+            /* remove the boxy frame */
+            border: none;
+            /* was 1px solid */
+            background: transparent;
+            /* was #f1f5f9 */
+
+            /* keep it clean but still polished */
+            border-radius: 10px;
+            /* optional: keep slight rounding */
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+            /* subtle lift */
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            border: 1px dashed var(--border);
+            background: linear-gradient(135deg, #f8fafc, #eef2ff);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 18px;
+            color: var(--faint);
+            font-size: 13px;
+            aspect-ratio: 4 / 3;
+            min-height: 220px;
+        }
+
+        .card .actions {
+            grid-area: actions;
+            padding: 12px 18px 18px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            color: #0f172a;
+            font-size: 14px;
+            transition: transform .15s ease, border-color .15s ease, background .15s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            border-color: rgba(34, 197, 94, 0.35);
+            background: #eef2ff;
+        }
+
+        .btn.secondary {
+            color: var(--muted);
+            background: #ffffff;
+        }
+
+        .btn svg {
+            opacity: 0.9
+        }
+
+        .divider {
+            grid-area: divider;
+            height: 1px;
+            background: rgba(15, 23, 42, 0.08);
+            margin: 8px 18px 0 12px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: var(--faint);
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 2px 0;
+        }
+
+        footer .smalllinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+        }
+
+        @media (max-width: 860px) {
+            .card {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "head"
+                    "body"
+                    "figure"
+                    "divider"
+                    "actions";
+            }
+
+            .card .head {
+                padding: 18px 18px 10px;
+            }
+
+            .card .body {
+                padding: 0 18px 14px;
+            }
+
+            .card figure {
+                padding: 0 18px 14px;
+            }
+
+            .card figure img {
+                height: auto;
+                min-height: 0;
+                aspect-ratio: 16 / 7;
+            }
+
+            .divider {
+                margin: 8px 18px 0;
+            }
+
+            .card .actions {
+                padding: 12px 18px 18px;
+            }
+
+            .topbar {
+                border-radius: 16px;
+            }
+
+            .brand {
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="topbar">
+            <div class="brand">
+                <div class="dot" aria-hidden="true"></div>
+                <div class="title">LocUS Acoustic</div>
+            </div>
+            <nav class="links" aria-label="Primary">
+                <a class="pill" href="https://waves.seas.upenn.edu/" target="_blank" rel="noopener">Upenn WAVES LAB</a>
+                <a class="pill" href="https://www.iarpa.gov/research-programs/locus" target="_blank"
+                    rel="noopener">IARPA LocUS</a>
+            </nav>
+        </div>
+
+        <header class="hero">
+            <h1>Acoustic Understanding</h1>
+            A curated, light-mode handbook of our work on acoustic channel modeling for room impulse response (RIR).
+            We organize projects by <b>Principles and Capturing</b> to first show our understnading to the acoustic
+            propagation and its relationship with the environment and geometries.
+            In the <b>Applications</b>, we show how we apply the techniques in reality to do acoustic
+            localization with the acoustic signatures (RIR) with our understanding of acoustic channel modeling.
+        </header>
+
+        <section id="principle" class="grid" aria-label="Principle">
+            <div class="section-title">
+                <div>
+                    <h2>Principle and Capturing</h2>
+                    Principled methods for modeling acoustic channels and method to capture the acoustic signatures,
+                    which
+                    underpin real-world applications.
+                </div>
+            </div>
+
+            <!-- AVR -->
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>AVR: Acoustic Volume Rendering for Neural Acoustic Field</h2>
+                    </div>
+                    <div class="tag">NeurIPS’24 (Spotlight)</div>
+                </div>
+                <div class="body">
+                    AVR models an <b>impulse response field</b> using a neural representation inspired by volume
+                    rendering. It synthesizes RIRs at novel listener/source poses and supports efficient training and
+                    rendering, bridging real measurements and realistic simulation.
+                </div>
+                <figure>
+                    <img src="./images/avr_teaser.png" alt="AVR teaser figure" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">
+                        Project Page
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Reciprocity -->
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Versa: Reciprocity for Acoustic Field Learning</h2>
+                    </div>
+                    <div class="tag">NeurIPS’25</div>
+                </div>
+                <div class="body">
+                    Leveraging <b>acoustic reciprocity</b> as supervision, this line of work enforces physical
+                    consistency when learning acoustic fields from sparse measurements. Swapping emitter ↔ listener
+                    roles improves generalization for predicting RIRs at new source positions.
+                </div>
+                <figure>
+                    <img src="./images/versa_teaser.png" alt="Reciprocity teaser figure" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
+                        rel="noopener">
+                        Project Page
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Audio-Visual Twin Reconstruction</h2>
+                    </div>
+                    <div class="tag">Arxiv preprint</div>
+                </div>
+                <div class="body">
+                    AVTwin reconstructs <b>editable audio-visual digital twins</b> from commodity smartphones by
+                    combining mobile RIR capture with visual-assisted acoustic field modeling. The result supports
+                    <b>material and geometry edits</b> with acoustics updated via differentiable acoustic rendering.
+                </div>
+                <figure>
+                    <video width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);"
+                        controls>
+                        <source src="./videos/av_twin_fin.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">
+                        Paper (arXiv)
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+
+        </section>
+
+
+
+        <section id="applications" class="grid" aria-label="Applications">
+            <div class="section-title">
+                <div>
+                    <h2>Applications</h2>
+                    Systems and pipelines that leverage acoustic features to build real-world capabilities in
+                    audio-visual digital twins, acoustic scene reconstruction, and more.
+                </div>
+            </div>
+
+
+            <!-- RIR2Depth Map -->
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Can we “hear” the shape of a room?</h2>
+                    </div>
+                    <div class="tag">Work in progress</div>
+                </div>
+                <div class="body">
+                    We explore RIR-to-Depth estimation, a new inverse acoustic rendering problem that aims to infer the
+                    panoramic depth map of an indoor environment using only recorded RIR.
+                    To tackle this ambiguity, we investigate <b>generative models</b> that learn the
+                    distribution of plausible room geometries. The model learns to reason about uncertainty and
+                    <b>generate geometrically consistent layouts</b> that explain the observed echoes. This have lots of
+                    potential in the acoustic localization since we can estimate the rough indoor environment from just
+                    acoustic signatures and <b>match the potential room layout to the floor plan database</b> for
+                    localization.
+                </div>
+                <figure>
+                    <img src="./images/rir_to_geometries.png" alt="AVTwin reconstruction teaser" loading="lazy" />
+                </figure>
+                <!-- <div class="divider"></div> -->
+                <!-- <div class="actions">
+                    <span class="btn secondary">Project page coming soon</span>
+                </div> -->
+            </article>
+
+            <!-- Inverse acoustics -->
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Inverse Acoustics</h2>
+                    </div>
+                    <div class="tag">Work in progress</div>
+                </div>
+                <div class="body">
+                    In the inverse acoustics, we are trying to decompose the acoustic scene into the basic components
+                    including the <b>audio content (dry sound)</b> and <b>acoustic effects</b>.
+                    For example, a common voice recording can contains two speakers voice. And the recordings (wet
+                    sound) are also affected by the room acoustics.
+                    Our goal is to effectively decompose both the two dry speech sound sources and the room acoustic
+                    effects (RIR) from the mixed recording. This can be very useful for acoustic localization since
+                    we can estimate the room acoustic effects from the recording and match it to the floor plan
+                    database for localization. Following we show a demo.
+                </div>
+                <figure>
+                    <!-- Audio Demo Interface -->
+                    <img src="./images/inverse_acoustic_teaser.png" alt="Inverse acoustic teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <details style="width: 100%;">
+                        <summary
+                            style="cursor: pointer; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); background: #f8fafc; color: #0f172a; font-size: 14px; list-style: none; display: flex; align-items: center; justify-content: space-between;">
+                            <span>Show Interactive Audio Demo</span>
+                            <span style="transition: transform 0.2s;">▼</span>
+                        </summary>
+                        <div
+                            style="margin-top: 16px; padding: 20px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border);">
+
+                            <!-- Top Section: Mixed Audio -->
+                            <div
+                                style="margin-bottom: 24px; padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+                                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: var(--text);">Mixed Recording
+                                    (Wet
+                                    Sound)</h3>
+                                <audio controls style="width: 100%; margin-bottom: 12px;">
+                                    <source src="./audio/mixed_recording.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <div
+                                    style="width: 100%; height: 120px; background: white; border: 1px solid var(--border); border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: 13px;">
+                                    <img src="./images/waveform_mixed.png" alt="Mixed STFT"
+                                        style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" />
+                                </div>
+                            </div>
+
+                            <!-- Bottom Section: Decomposition Results -->
+
+                            <!-- Source 1 -->
+                            <div style="margin-bottom: 16px;">
+                                <h3
+                                    style="margin: 0 0 12px 0; font-size: 15px; color: var(--text); background: linear-gradient(135deg, #eef2ff, #f1f5f9); padding: 8px 12px; border-radius: 8px;">
+                                    Source 1</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+                                    <!-- Source 1 Ground Truth -->
+                                    <div
+                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+                                        <h3
+                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #22c55e; padding-bottom: 6px;">
+                                            Ground Truth</h3>
+
+                                        <!-- GT Dry Speech -->
+                                        <div style="margin-bottom: 16px;">
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
+                                                Speech
+                                            </h4>
+                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
+                                                <source src="./audio/gt_dry_speech_src1.wav" type="audio/wav">
+                                            </audio>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    STFT</div>
+                                                <img src="./images/gt_dry_stft_src1.png" alt="GT dry STFT src1"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+
+                                        <!-- GT RIR -->
+                                        <div>
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
+                                                Impulse Response</h4>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    Waveform</div>
+                                                <img src="./images/gt_rir_waveform_src1.png" alt="GT RIR waveform src1"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Source 1 Estimated -->
+                                    <div
+                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+                                        <h3
+                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #2563eb; padding-bottom: 6px;">
+                                            Estimated</h3>
+
+                                        <!-- Estimated Dry Speech -->
+                                        <div style="margin-bottom: 16px;">
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
+                                                Speech
+                                            </h4>
+                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
+                                                <source src="./audio/est_dry_speech_src1.wav" type="audio/wav">
+                                            </audio>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    STFT</div>
+                                                <img src="./images/est_dry_stft_src1.png" alt="Estimated dry STFT src1"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Estimated RIR -->
+                                        <div>
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
+                                                Impulse Response</h4>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    Waveform</div>
+                                                <img src="./images/est_rir_waveform_src1.png"
+                                                    alt="Estimated RIR waveform src1"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Source 2 -->
+                            <div>
+                                <h3
+                                    style="margin: 0 0 12px 0; font-size: 15px; color: var(--text); background: linear-gradient(135deg, #eef2ff, #f1f5f9); padding: 8px 12px; border-radius: 8px;">
+                                    Source 2</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+                                    <!-- Source 2 Ground Truth -->
+                                    <div
+                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+                                        <h3
+                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #22c55e; padding-bottom: 6px;">
+                                            Ground Truth</h3>
+
+                                        <!-- GT Dry Speech -->
+                                        <div style="margin-bottom: 16px;">
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
+                                                Speech
+                                            </h4>
+                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
+                                                <source src="./audio/gt_dry_speech_src2.wav" type="audio/wav">
+                                            </audio>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    STFT</div>
+                                                <img src="./images/gt_dry_stft_src2.png" alt="GT dry STFT src2"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+
+                                        <!-- GT RIR -->
+                                        <div>
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
+                                                Impulse Response</h4>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    Waveform</div>
+                                                <img src="./images/gt_rir_waveform_src2.png" alt="GT RIR waveform src2"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Source 2 Estimated -->
+                                    <div
+                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+                                        <h3
+                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #2563eb; padding-bottom: 6px;">
+                                            Estimated</h3>
+
+                                        <!-- Estimated Dry Speech -->
+                                        <div style="margin-bottom: 16px;">
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
+                                                Speech
+                                            </h4>
+                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
+                                                <source src="./audio/est_dry_speech_src2.wav" type="audio/wav">
+                                            </audio>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    STFT</div>
+                                                <img src="./images/est_dry_stft_src2.png" alt="Estimated dry STFT src2"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Estimated RIR -->
+                                        <div>
+                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
+                                                Impulse Response</h4>
+                                            <div
+                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+                                                <div
+                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
+                                                    Waveform</div>
+                                                <img src="./images/est_rir_waveform_src2.png"
+                                                    alt="Estimated RIR waveform src2"
+                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </article>
+
+        </section>
+
+    </div>
+
+
+</body>
+
+</html>
