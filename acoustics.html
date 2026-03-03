@@ -177,6 +177,57 @@
             color: #1e293b;
         }
 
+        .members {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .member-tag {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        .member-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        .member-tag:hover .member-photo {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .member-photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            overflow: hidden;
+            object-fit: cover;
+            transition: border-color .15s ease, box-shadow .15s ease;
+        }
+
+        .member-name {
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .member-position {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.3;
+        }
+
         .grid {
             margin-top: 22px;
             display: grid;
@@ -458,6 +509,32 @@
             localization with the acoustic signatures (RIR) with our understanding of acoustic channel modeling.
         </header>
 
+        <section class="members" aria-label="Team Members">
+            <a class="member-tag" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">
+                <img src="images/mingmin_photo.png" alt="Member 1" class="member-photo" />
+                <p class="member-name">Mingmin Zhao</p>
+                <p class="member-position">Assistant Professor at Upenn</p>
+            </a>
+            <a class="member-tag" href="https://croy.web.engr.illinois.edu/" target="_blank" rel="noopener">
+                <img src="images/romit_photo.jpeg" alt="Member 2" class="member-photo" />
+                <p class="member-name">Romit Roy Choudhury</p>
+                <p class="member-position">Professor at UIUC</p>
+            </a>
+        </section>
+
+        <section class="members" aria-label="Team Members">
+            <a class="member-tag" href="https://zitonglan.github.io/" target="_blank" rel="noopener">
+                <img src="images/zitong_photo.jpeg" alt="Member 1" class="member-photo" />
+                <p class="member-name">Zitong Lan</p>
+                <p class="member-position">Upenn PhD student</p>
+            </a>
+            <a class="member-tag" href="https://yiduohao.github.io/" target="_blank" rel="noopener">
+                <img src="images/yiduo_photo.jpeg" alt="Member 2" class="member-photo" />
+                <p class="member-name">Yiduo Hao</p>
+                <p class="member-position">Upenn PhD student</p>
+            </a>
+        </section>
+
         <section id="principle" class="grid" aria-label="Principle">
             <div class="section-title">
                 <div>
@@ -534,7 +611,7 @@
                     <div>
                         <h2>Audio-Visual Twin Reconstruction</h2>
                     </div>
-                    <div class="tag">Arxiv preprint</div>
+                    <div class="tag">To appear at Mobisys'26</div>
                 </div>
                 <div class="body">
                     AVTwin reconstructs <b>editable audio-visual digital twins</b> from commodity smartphones by
@@ -654,8 +731,6 @@
                                 </div>
                             </div>
 
-                            <!-- Bottom Section: Decomposition Results -->
-
                             <!-- Source 1 -->
                             <div style="margin-bottom: 16px;">
                                 <h3
@@ -743,7 +818,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -834,18 +908,14 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </details>
                 </div>
             </article>
-
         </section>
-
     </div>
-
 
 </body>
 
