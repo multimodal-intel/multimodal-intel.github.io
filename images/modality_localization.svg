@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Localization modality illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="360" fill="url(#bg)"/>
+  <rect x="40" y="40" width="720" height="280" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="70" y="95" fill="#334155" font-size="24" font-family="Arial, Helvetica, sans-serif">Localization Modality</text>
+  <rect x="90" y="130" width="620" height="150" rx="12" fill="#f8fafc" stroke="#94a3b8"/>
+  <circle cx="190" cy="205" r="11" fill="#2563eb"/>
+  <circle cx="310" cy="175" r="11" fill="#16a34a"/>
+  <circle cx="440" cy="230" r="11" fill="#0ea5e9"/>
+  <circle cx="580" cy="185" r="11" fill="#22c55e"/>
+  <path d="M310 175 L440 230 L580 185" stroke="#64748b" stroke-width="3" fill="none"/>
+  <path d="M190 205 L310 175" stroke="#64748b" stroke-width="3" fill="none"/>
+  <path d="M440 230 L500 150" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+  <path d="M500 130 C470 130 445 155 445 185 C445 224 500 268 500 268 C500 268 555 224 555 185 C555 155 530 130 500 130 Z" fill="#ef4444" opacity="0.9"/>
+  <circle cx="500" cy="185" r="18" fill="#ffffff"/>
+</svg>
