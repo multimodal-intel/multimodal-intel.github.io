@@ -529,6 +529,29 @@
             letter-spacing: -0.2px;
         }
 
+        .pub-entry {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .pub-note {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 12px;
+            color: #1e293b;
+            background: #eef2ff;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 3px 8px;
+        }
+
+        .pub-venue {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
         .video-list {
             margin: 0;
             padding-left: 20px;
@@ -1501,111 +1524,113 @@
             <div class="section-title">
                 <div>
                     <h2>Publications</h2>
-                    Mixed publication list across UPenn and UIUC, organized by year.
                 </div>
             </div>
 
             <article class="card text-card">
                 <div class="head">
-                    <div>
-                        <h2>Selected Publications (UPenn + UIUC)</h2>
-                    </div>
                 </div>
                 <div class="body">
                     <p class="pub-group-title">2026</p>
                     <ol class="pub-list">
-                        <li><b>[UPenn]</b> Reconstructing Audio-Visual Digital Twins from Commodity Smartphones (MobiSys
-                            2026). <a href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">arXiv</a>
-                        </li>
-                        <li><b>[UIUC]</b> AppleM (MobiCom 2026).</li>
-                        <li><b>[UIUC]</b> TouchGraph (MobiCom 2026).</li>
-                        <li><b>[UIUC]</b> HEAT (SIGCOMM 2026).</li>
-                        <li><b>[UIUC]</b> GPS-ViT (TMC 2026).</li>
+                        <li><b>Building Audio-Visual Digital Twins with Smartphones</b><div class="pub-entry">Zitong Lan, Yiwei Tang, Yuhan Wang, Haowen Lai, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026 (Conditional Accepted)</span></div></li>
+                        <li><b>Surface Characterization with mmWave Signals</b><div class="pub-entry">Haowen Lai, Zitong Lan, Dongyin Hu, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026 (Conditional Accepted)</span></div></li>
+                        <li><b>Next-Scale Autoregressive Models for Text-to-Motion Generation</b><div class="pub-entry">Zhiwei Zheng, Shibo Jin, Lingjie Liu, and Mingmin Zhao<br /><span class="pub-venue">CVPR 2026</span></div></li>
+                        <li><b>Motion Capture with Millimeter-Wave Tags</b><div class="pub-entry">Xin Yang, Yifei Liu, Yunshuang Li, Yao Gong, Dinesh Jayaraman, Omid Abari, and Mingmin Zhao<br /><span class="pub-venue">SenSys 2026</span></div></li>
+                        <li><b>SmartDJ: Declarative Audio Editing with Audio Language Model</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">ICLR 2026</span></div></li>
+                        <li><b>CO3: Contrasting Concepts Compose Better in Diffusion Models</b><div class="pub-entry">Debottam Dutta, Jianchong Chen, Rajalaxmi Rajagopalan, Yu-lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">ICLR 2026</span></div></li>
+                        <li><b>Zero-shot Human Pose Estimation using Diffusion-based Inverse solvers</b><div class="pub-entry">Sahil Bhandary, Romit Roy Choudhury<br /><span class="pub-venue">ICLR 2026</span></div></li>
+                        <li><b>Contrastive Diffusion Guidance for Spatial Inverse Problems</b><div class="pub-entry">Sattwik Basu, Chaitanya Amballa, Alan Xu, Jorge Sampedro, Srihari Nelakuditi, Romit Roy Choudhury<br /><span class="pub-venue">ICLR 2026</span></div></li>
                     </ol>
 
                     <p class="pub-group-title">2025</p>
                     <ol class="pub-list">
-                        <li><b>[UPenn/UIUC]</b> Can NeRFs See without Cameras? (NeurIPS 2025). <a
-                                href="https://arxiv.org/abs/2505.22441" target="_blank" rel="noopener">arXiv</a></li>
-                        <li><b>[UPenn]</b> Versa: Physical Reciprocity Learning for Neural Acoustic Fields (NeurIPS
-                            2025). <a href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
-                                rel="noopener">Project</a></li>
-                        <li><b>[UPenn]</b> Hear Any Place in Any Space with Hyper-Realistic Spatial Audio Generation
-                            (ICCV 2025).</li>
-                        <li><b>[UPenn/UIUC]</b> PanoRadar: Visual Understanding in the Wild through RF (IEEE TMC 2025).
-                        </li>
-                        <li><b>[UIUC]</b> From Pulse to Pose (MobiCom 2025).</li>
-                        <li><b>[UIUC]</b> T3M (MobiCom 2025).</li>
-                        <li><b>[UIUC]</b> Dancer (MobiCom 2025).</li>
-                        <li><b>[UIUC]</b> ICEProbe (MobiCom 2025).</li>
-                        <li><b>[UIUC]</b> Voila (MobiCom 2025).</li>
+                        <li><b>Non-Line-of-Sight 3D Reconstruction with Radar</b><div class="pub-entry">Haowen Lai, Zitong Lan, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
+                        <li><b>Resounding Acoustic Fields with Reciprocity</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
+                        <li><b>Guiding Audio Editing with Audio Language Model</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025 Generative and Protective AI for Content Creation</span></div><span class="pub-note">Oral Presentation</span></li>
+                        <li><b>RF-Based 3D SLAM Rivaling Vision Approaches</b><div class="pub-entry">Haowen Lai*, Zhiwei Zheng*, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2025</span></div><span class="pub-note">Best Artifact Award</span></li>
+                        <li><b>Tracking Blink Dynamics and Mental States on Glasses</b><div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup Lee, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiSys 2025</span></div></li>
+                        <li><b>Tracking Blink Dynamics on Smart Glasses Using mmWave Radar</b><div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup Lee, and Mingmin Zhao<br /><span class="pub-venue">The Association for Research in Vision and Ophthalmology 2025 Annual Meeting</span></div></li>
+                        <li><b>Can NeRFs "See" without Cameras?</b><div class="pub-entry">Chaitanya Amballa, Sattwik Basu, Yu-Lin Wei, Z. Yang, M. Ergezer, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
+                        <li><b>ArrayDPS: Unsupervised Blind Source Separation with a Diffusion Prior</b><div class="pub-entry">Zhongweiyang Xu, Xulin Fan, Zhong-Qiu Wang, Xilin Jiang, Romit Roy Choudhury<br /><span class="pub-venue">ICML 2025</span></div></li>
+                        <li><b>Estimating Multi-chirp Parameters using Curvature-guided Langevin Monte Carlo</b><div class="pub-entry">Sattwik Basu, Debottam Dutta, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">IEEE ICASSP 2025</span></div></li>
+                        <li><b>Kernel Learning for Sample Constrained Black-Box Optimization</b><div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">AAAI 2025</span></div></li>
+                        <li><b>Unsupervised Multi-channel Speech Dereverberation via Diffusion</b><div class="pub-entry">Yulun Wu, Zhongweiyang Xu, Jianchong Chen, Zhong-Qiu Wang, Romit Roy Choudhury<br /><span class="pub-venue">WASPAA 2025</span></div></li>
                     </ol>
 
                     <p class="pub-group-title">2024</p>
                     <ol class="pub-list">
-                        <li><b>[UPenn]</b> Acoustic Volume Rendering for Neural Acoustic Fields (NeurIPS 2024
-                            Spotlight). <a href="https://zitonglan.github.io/avr" target="_blank"
-                                rel="noopener">Project</a></li>
-                        <li><b>[UPenn]</b> Visual Recognition in the Wild by Sampling from the Long Wave Infrared
-                            Spectrum (MobiCom 2024).</li>
-                        <li><b>[UPenn/UIUC]</b> PanoRadar: Visual Recognition in the Wild through RF (MobiCom 2024).
-                        </li>
-                        <li><b>[UPenn]</b> Deep Learning Beyond Conventional Spectral Imaging (AAAI 2024).</li>
-                        <li><b>[UIUC]</b> Similarity Beyond Vision (MobiCom 2024).</li>
-                        <li><b>[UIUC]</b> Purr (MobiCom 2024).</li>
-                        <li><b>[UIUC]</b> HumidFormer (MobiCom 2024).</li>
-                        <li><b>[UIUC]</b> Binaural Backdoor (USENIX Security 2024).</li>
-                        <li><b>[UIUC]</b> Zero to Hero (NSDI 2024).</li>
-                        <li><b>[UIUC]</b> Invisible Crackles (SIGCOMM 2024).</li>
+                        <li><b>Acoustic Volume Rendering and Neural Impulse Response Fields</b><div class="pub-entry">Zitong Lan, Chenhao Zheng, Zhiwei Zheng, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2024</span></div><span class="pub-note">Spotlight</span></li>
+                        <li><b>Enabling Visual Recognition at Radio Frequency</b><div class="pub-entry">Haowen Lai, Gaoxiang Luo, Yifei Liu, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2024</span></div><span class="pub-note">Best Demo Award</span><span class="pub-note">First Place in Student Research Competition</span></li>
+                        <li><b>Development of oculomics artificial intelligence for cardiovascular risk factors: A case study in fundus oculomics for HbA1c assessment and clinically relevant considerations for clinicians</b><div class="pub-entry">Joshua Ong, Kuk Jin Jang, Seung Ju Baek, Dongyin Hu, Vivian Lin, Sooyong Jang, Alexandra Thaler, Nouran Sabbagh, Almiqdad Saeed, Minwook Kwon, Jin Hyun Kim, Seongjin Lee, Yong Seop Han, Mingmin Zhao, Oleg Sokolsky, Insup Lee, Lama A Al-Aswad<br /><span class="pub-venue">Asia-Pacific Journal of Ophthalmology 2024</span></div></li>
+                        <li><b>Multi-Source Music Generation with Latent Diffusion</b><div class="pub-entry">Zhongweiyang Xu, Debottam Dutta, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS Audio Imagination Workshop 2024</span></div></li>
+                        <li><b>Sample-Constrained Black Box Optimization for Audio Personalization</b><div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">AAAI 2024</span></div></li>
                     </ol>
 
-                    <p class="pub-group-title">2020-2023</p>
+                    <p class="pub-group-title">2023</p>
                     <ol class="pub-list">
-                        <li><b>[UPenn]</b> Can ACLs Replace Soundproofing? (SIGCOMM 2023).</li>
-                        <li><b>[UPenn]</b> Locating Mixed Sound Sources in Real Room (ACM MM 2023).</li>
-                        <li><b>[UPenn]</b> No Need to Play It Loud: Robust Online Inference over Wireless Signals
-                            (MobiSys 2023).</li>
-                        <li><b>[UPenn]</b> Physically Consistent Wireless Sensing with Self-supervised Contrastive
-                            Learning (SenSys 2023).</li>
-                        <li><b>[UPenn]</b> mmNorm: Multimodal Norm Discovery and Detection in Videos (ACM MM 2023).</li>
-                        <li><b>[UPenn]</b> Self-Learning Transformation and Synchronization for Visible-Infrared Person
-                            Re-Identification (ICME 2023).</li>
-                        <li><b>[UPenn]</b> Mood by Music (TOCHI 2022).</li>
-                        <li><b>[UPenn]</b> Personalizing HRTFs from Earable Devices while Walking (SIGCOMM 2021).</li>
-                        <li><b>[UPenn]</b> Voice In Ear (MobiCom 2021).</li>
-                        <li><b>[UPenn]</b> Can We Find More Friends? (MobiCom 2021).</li>
-                        <li><b>[UPenn]</b> Transforming Acoustic Characteristics to Deceive Playback Spoofing
-                            Countermeasures (ODYSSEY 2020).</li>
-                        <li><b>[UIUC]</b> Voice Localization using Nearby Wall Reflections (MobiCom 2020).</li>
-                        <li><b>[UIUC]</b> Re-Loc: Hybrid Indoor Localization through Retracing of RF Signals (MobiCom
-                            2020).</li>
-                        <li><b>[UIUC]</b> We Hear Your Activities through Wi-Fi Signals (MobiCom 2020).</li>
+                        <li><b>Seeing Through Clouds in Satellite Images</b><div class="pub-entry">Mingmin Zhao, Peder Olsen, and Ranveer Chandra<br /><span class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing 2023</span></div></li>
+                        <li><b>Multi-Channel Speech Enhancement For SPEAR Challenge: A Three Stage Approach</b><div class="pub-entry">Zhongweiyang Xu, Debottam Dutta, Xulin Fan, Mark Hasegawa-Johnson, Romit Roy Choudhury<br /><span class="pub-venue">SPEAR Challenge (2nd Rank) 2023</span></div></li>
+                        <li><b>Audio Personalization through Human-in-the-loop Optimization</b><div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS Workshop on ML for Audio 2023</span></div></li>
+                        <li><b>Self-Supervised Speech Denoising with Multi-Modal Data</b><div class="pub-entry">Yu-Lin Wei, Rajalaxmi Rajagopalan, Bashima Islam, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS Workshop on ML for Audio 2023</span></div></li>
+                        <li><b>RoSS: Rotation-induced Aliasing for Audio Source Separation</b><div class="pub-entry">Hyungjoo Seo, Sahil Bhandary Karnoor, Romit Roy Choudhury<br /><span class="pub-venue">ICRA 2023</span></div></li>
                     </ol>
 
-                    <p class="pub-group-title">Pre-2020 Representative</p>
+                    <p class="pub-group-title">2022</p>
                     <ol class="pub-list">
-                        <li><b>[UIUC]</b> RF-Diary: RF-Sensing of Physical and Cognitive Well-being (MobiCom 2019).</li>
-                        <li><b>[UIUC]</b> MRI: Multi-Path Residual Learning for On-Body Device Localization with
-                            Earables (MobiCom 2019).</li>
-                        <li><b>[UIUC]</b> It's Hearable: Earable Authentication based on In-Ear Acoustics (MobiCom
-                            2018).</li>
-                        <li><b>[UIUC]</b> Soli: Ubiquitous Gesture Sensing with Millimeter Wave Radar (MobiCom 2018).
-                        </li>
-                        <li><b>[UIUC]</b> EarIO: A Low-Power Acoustic Sensing Earable for Continuous Real-Time Voicing
-                            Detection (MobiCom 2018).</li>
-                        <li><b>[UIUC]</b> RF-IDraw: Virtual Touch Screen in the Air using RF Signals (MobiCom 2017).
-                        </li>
+                        <li><b>Wireless Sensing with Machine Learning: Through-Wall Vision &amp; Contactless Health Monitoring</b><div class="pub-entry">Mingmin Zhao<br /><span class="pub-venue">Ph.D. Dissertation 2022</span></div><span class="pub-note">ACM SIGMOBILE Doctoral Dissertation Award Runner-up</span></li>
+                        <li><b>Learning to Separate Voices by Spatial Regions</b><div class="pub-entry">Zhongweiyang Xu, Romit Roy Choudhury<br /><span class="pub-venue">ICML 2022</span></div></li>
+                        <li><b>PoseKernelLifter: Metric Lifting of 3D Human Pose Using Sound</b><div class="pub-entry">Zhijian Yang, Xiaoran Fan, Volkan Isler, Hyun Soo Park<br /><span class="pub-venue">IEEE/CVF CVPR 2022</span></div></li>
                     </ol>
 
-                    <p class="news-source">
-                        Full sources:
-                        <a href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Mingmin Zhao
-                            homepage</a>,
-                        <a href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">SiNRG
-                            publications</a>,
-                        <a href="https://synrg.csl.illinois.edu/publicationsbefore2017.html" target="_blank"
-                            rel="noopener">SiNRG pre-2017 archive</a>
-                    </p>
+                    <p class="pub-group-title">2021</p>
+                    <ol class="pub-list">
+                        <li><b>Assessment of Medication Self-Administration using Artificial Intelligence</b><div class="pub-entry">Mingmin Zhao*, Kreshnik Hoti*, Hao Wang, Aniruddh Raghu, and Dina Katabi<br /><span class="pub-venue">Nature Medicine</span>, 27, 727-735 (2021)</div></li>
+                        <li><b>Inferring Facing Direction from Voice Signals</b><div class="pub-entry">Yu-Lin Wei, Rui Li, Abhinav Mehrotra, Romit Roy Choudhury, Nic Lane<br /><span class="pub-venue">arXiv 2021</span></div></li>
+                        <li><b>Personalizing Head Related Transfer Functions for Earables</b><div class="pub-entry">Zhijian Yang, Romit Roy Choudhury<br /><span class="pub-venue">ACM SIGCOMM 2021</span></div></li>
+                        <li><b>Angle-of-arrival (AOA) Factorization in Multipath Channels</b><div class="pub-entry">Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">IEEE ICASSP 2021</span></div></li>
+                        <li><b>Earable Computing: A New Area to Think About</b><div class="pub-entry">Romit Roy Choudhury<br /><span class="pub-venue">ACM HotMobile 2021</span></div></li>
+                    </ol>
+
+                    <p class="pub-group-title">2020</p>
+                    <ol class="pub-list">
+                        <li><b>Voice Localization Using Nearby Wall Reflections</b><div class="pub-entry">Sheng Shen, Daguan Chen, Yu-Lin Wei, Zhijian Yang, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2020</span></div></li>
+                        <li><b>Ear-AR: Indoor Acoustic Augmented Reality on Earphones</b><div class="pub-entry">Zhijian Yang, Yu-Lin Wei, Sheng Shen, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2020</span></div></li>
+                        <li><b>EarSense: Earphones as a Teeth Activity Sensor</b><div class="pub-entry">Jay Prakash, Zhijian Yang, Yu-Lin Wei, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2020</span></div></li>
+                    </ol>
+
+                    <details style="margin-top: 12px;">
+                        <summary class="btn secondary" style="cursor:pointer; width:max-content;">Pre-2020 Publications</summary>
+                        <div style="margin-top: 12px;">
+                            <ol class="pub-list">
+                                <li><b>Making the Invisible Visible: Action Recognition Through Walls and Occlusions</b><div class="pub-entry">Tianhong Li*, Lijie Fan*, Mingmin Zhao, Yingcheng Liu, and Dina Katabi<br /><span class="pub-venue">ICCV 2019</span></div></li>
+                                <li><b>Through-Wall Human Mesh Recovery Using Radio Signals</b><div class="pub-entry">Mingmin Zhao, Yingcheng Liu, Aniruddh Raghu, Tianhong Li, Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span class="pub-venue">ICCV 2019</span></div></li>
+                                <li><b>Enabling Identification and Behavioral Sensing in Homes using Radio Reflections</b><div class="pub-entry">Chen-Yu Hsu, Rumen Hristov, Guang-He Lee, Mingmin Zhao, and Dina Katabi<br /><span class="pub-venue">ACM CHI 2019</span></div></li>
+                                <li><b>Bidirectional Inference Networks: A Class of Deep Bayesian Networks for Health Profiling</b><div class="pub-entry">Hao Wang, Chengzhi Mao, Hao He, Mingmin Zhao, Dina Katabi, and Tommi Jaakkola<br /><span class="pub-venue">AAAI 2019</span></div></li>
+                                <li><b>Many-to-Many Beam Alignment in Millimeter Wave Networks</b><div class="pub-entry">Suraj Jog, Jiaming Wang, Junfeng Guan, Thomas Moon, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">NSDI 2019</span></div></li>
+                                <li><b>Ghostbuster: Detecting the Presence of Hidden Eavesdroppers</b><div class="pub-entry">Anadi Chaman, Jiaming Wang, Jiachen Sun, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2018</span></div></li>
+                                <li><b>Closing the Gaps in Inertial Motion Tracking</b><div class="pub-entry">Sheng Shen, Mahanth Gowda, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2018</span></div></li>
+                                <li><b>MUTE: Bringing IoT to Noise Cancellation</b><div class="pub-entry">Sheng Shen, Nirupam Roy, Junfeng Guan, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM SIGCOMM 2018</span></div></li>
+                                <li><b>LiquID: A Wireless Liquid IDentifier</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Yixuan Zhao, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys 2018</span></div></li>
+                                <li><b>Inaudible Voice Commands: The Long-Range Attack and Defense</b><div class="pub-entry">Nirupam Roy, Sheng Shen, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">NSDI 2018</span></div></li>
+                                <li><b>RF-Based 3D Skeletons</b><div class="pub-entry">Mingmin Zhao, Yonglong Tian, Hang Zhao, Mohammad Abu Alsheikh, Tianhong Li, Rumen Hristov, Zachary Kabelac, Dina Katabi, and Antonio Torralba<br /><span class="pub-venue">ACM SIGCOMM 2018</span></div></li>
+                                <li><b>Through-Wall Human Pose Estimation Using Radio Signals</b><div class="pub-entry">Mingmin Zhao, Tianhong Li, Mohammad Abu Alsheikh, Yonglong Tian, Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span class="pub-venue">CVPR 2018</span></div><span class="pub-note">Spotlight Presentation</span></li>
+                                <li><b>If WiFi APs Could Move: A Measurement Study</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy Choudhury, Srihari Nelakuditi<br /><span class="pub-venue">IEEE Transactions on Mobile Computing 2018</span></div></li>
+                                <li><b>Technical perspective: Is your WiFi a sensor?</b><div class="pub-entry">Romit Roy Choudhury<br /><span class="pub-venue">Communications of the ACM 2018</span></div></li>
+                                <li><b>BackDoor: Making Microphones Hear Inaudible Sounds</b><div class="pub-entry">Nirupam Roy, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys 2017</span></div><span class="pub-note">Best Paper Award</span></li>
+                                <li><b>Bringing IoT to Sports Analytics</b><div class="pub-entry">Mahanth Gowda, Ashutosh Dhekne, Sheng Shen, Romit Roy Choudhury, Xue Yang, Lei Yang, A. Essanian, S. Golwalkar<br /><span class="pub-venue">NSDI 2017</span></div></li>
+                                <li><b>Extending Cell Tower Coverage through Drones</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy Choudhury<br /><span class="pub-venue">ACM HotMobile 2017</span></div></li>
+                                <li><b>Learning Sleep Stages from Radio Signals: A Conditional Adversarial Architecture</b><div class="pub-entry">Mingmin Zhao, Shichao Yue, Dina Katabi, Tommi Jaakkola, and Matt Bianchi<br /><span class="pub-venue">ICML 2017</span></div></li>
+                                <li><b>Emotion Recognition using Wireless Signals</b><div class="pub-entry">Mingmin Zhao, Fadel Adib, and Dina Katabi<br /><span class="pub-venue">ACM MobiCom 2016</span></div><span class="pub-note">ACM/CACM Research Highlights</span></li>
+                                <li><b>VeTrack: Real Time Vehicle Tracking in Uninstrumented Indoor Environments</b><div class="pub-entry">Mingmin Zhao, Ruipeng Gao, Tao Ye, Fan Ye, Yizhou Wang, and Guojie Luo<br /><span class="pub-venue">ACM SenSys 2015</span></div></li>
+                                <li><b>Predictive Encoding of Contextual Relationships for Perceptual Inference, Interpolation and Prediction</b><div class="pub-entry">Mingmin Zhao, Chengxu Zhuang, Yizhou Wang, and Tai Sing Lee<br /><span class="pub-venue">ICLR 2015</span></div></li>
+                                <li><b>Jigsaw: Indoor Floor Plan Reconstruction via Mobile Crowdsensing</b><div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang, Kaigui Bian, Tao Wang, and Xiaoming Li<br /><span class="pub-venue">ACM MobiCom 2014</span></div></li>
+                                <li><b>Smartphone-based Real Time Vehicle Tracking in Indoor Parking Structures</b><div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang, and Guojie Luo<br /><span class="pub-venue">IEEE Transactions on Mobile Computing</span>, 16(7), 2017</div></li>
+                                <li><b>Multi-story Indoor Floor Plan Reconstruction via Mobile Crowdsensing</b><div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang, Kaigui Bian, Tao Wang, and Xiaoming Li<br /><span class="pub-venue">IEEE Transactions on Mobile Computing</span>, 15(6), 2016</div></li>
+                                <li><b>Poster Abstract: VeLoc: Finding Your Car in the Parking Lot</b><div class="pub-entry">Mingmin Zhao, Ruipeng Gao, Jiaxu Zhu, Tao Ye, Fan Ye, Yizhou Wang, Kaigui Bian, Min Zhang, and Guojie Luo<br /><span class="pub-venue">ACM SenSys 2014</span></div></li>
+                            </ol>
+                        </div>
+                    </details>
                 </div>
             </article>
         </section>
