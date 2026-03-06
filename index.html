@@ -303,7 +303,7 @@
         .card {
             grid-column: span 12;
             display: grid;
-            grid-template-columns: minmax(360px, 46%) 1fr;
+            grid-template-columns: minmax(360px, 25%) 1fr;
             grid-template-areas:
                 "figure head"
                 "figure body"
@@ -383,29 +383,10 @@
             font-size: 14.5px;
         }
 
-        /* .card figure {
-            grid-area: figure;
-            margin: 0;
-            padding: 18px 12px 18px 18px;
-        }
-
-        .card figure img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            object-fit: contain;
-            aspect-ratio: 4 / 3;
-            min-height: 220px;
-            background: #f1f5f9;
-        } */
-
         .card figure {
             grid-area: figure;
             margin: 0;
             padding: 16px 10px 16px 16px;
-            /* slightly tighter */
             display: flex;
             align-items: center;
         }
@@ -506,23 +487,6 @@
             text-underline-offset: 2px;
         }
 
-        .news-list {
-            margin: 0;
-            padding-left: 20px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .news-list li+li {
-            margin-top: 8px;
-        }
-
-        .news-source {
-            margin: 0 0 8px;
-            font-size: 13px;
-            color: var(--faint);
-        }
-
         .pub-group-title {
             margin: 14px 0 8px;
             font-size: 15px;
@@ -534,17 +498,6 @@
             color: var(--muted);
             font-size: 13px;
             line-height: 1.45;
-        }
-
-        .pub-note {
-            display: inline-block;
-            margin-top: 4px;
-            font-size: 12px;
-            color: #1e293b;
-            background: #eef2ff;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 3px 8px;
         }
 
         .pub-venue {
@@ -678,13 +631,12 @@
         }
 
         .topic-card img {
-            width: calc(100% - 28px);
-            margin: 0 14px 12px;
+            width: calc(100% - 80px);
+            margin: 0 40px 12px;
             border-radius: 10px;
-            border: 1px solid var(--border);
-            object-fit: cover;
-            aspect-ratio: 16 / 7;
-            max-height: 120px;
+            object-fit: contain;
+            aspect-ratio: 16 / 5;
+            max-height: 86px;
         }
 
         .topic-card .topic-actions {
@@ -782,23 +734,20 @@
             We are a joint research team led by investigators at the University of Pennsylvania (UPenn) and the
             University of Illinois Urbana-Champaign (UIUC), focused on building next-generation multimodal intelligence
             systems for real-world scene understanding and geospatial reasoning. Our vision is to move beyond
-            single-modality pipelines by tightly integrating audio, vision, and RF sensing with physics-informed
-            machine learning. Across this portfolio, we study how signal propagation, 3D geometry, and learned
-            representations can be combined to infer where events occur, what environments look like, and how scenes
-            can be reconstructed from incomplete observations. The three themes below highlight our prior and ongoing
+            single-modality by tightly integrating audio, vision, and RF sensing with physics-informed
+            machine learning. We study how signal propagation, 3D geometry, and learned
+            representations can be combined to solve inverse problems and infer where events occur and how scenes can be reconstructed. The three themes below highlight our prior and ongoing
             work in acoustic and audio intelligence, computer vision and machine learning, and localization systems.
         </header>
 
         <nav class="jumpbar" aria-label="Section Navigation">
             <span class="jump-label">Jump To</span>
-            <a class="pill" href="#topics-overview">Research Topics</a>
             <a class="pill" href="#people">People</a>
             <a class="pill" href="#videos">Videos & Demos</a>
-            <a class="pill" href="#news">News</a>
+            <a class="pill" href="#acoustic-audio">Research: Acoustic & Audio</a>
+            <a class="pill" href="#cv-ml">Research: CV & ML</a>
+            <a class="pill" href="#localization-systems">Research: Localization</a>
             <a class="pill" href="#publications">Publications</a>
-            <a class="pill" href="#acoustic-audio">Acoustic & Audio</a>
-            <a class="pill" href="#cv-ml">CV & ML</a>
-            <a class="pill" href="#localization-systems">Localization</a>
         </nav>
 
         <section id="topics-overview" class="grid" aria-label="Research Topics Overview">
@@ -815,14 +764,14 @@
                         <h3>Acoustic and Audio Intelligence</h3>
                     </div>
                     <p>
-                        We study acoustic field modeling, room impulse response estimation, and inverse acoustics to
+                        We model acoustic fields and room impulse response, and study inverse acoustics to
                         recover scene structure and source characteristics from real-world recordings. By combining
                         physical propagation priors with learning-based inference, we make audio a reliable modality
                         for robust environmental reasoning and location inference.
                     </p>
-                    <img src="./images/modality_audio.svg" alt="Acoustic and audio modality concept" loading="lazy" />
+                    <img src="./images/audio.png" alt="Acoustic and audio modality concept" loading="lazy" />
                     <div class="topic-actions">
-                        <a class="btn secondary" href="#acoustic-audio">More Details</a>
+                        <a class="btn secondary" href="#acoustic-audio">More Details <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
 
@@ -833,12 +782,11 @@
                     <p>
                         We develop multimodal learning and inverse rendering methods that infer geometry, semantics,
                         and uncertainty from sparse or noisy signals. This line of work connects visual observations,
-                        generative priors, and cross-modal supervision to improve scene understanding when any single
-                        sensing modality is incomplete.
+                        generative priors, and cross-modal supervision to improve scene understanding with complementary capabilities across multiple modalities.
                     </p>
-                    <img src="./images/modality_cv.svg" alt="Computer vision modality concept" loading="lazy" />
+                    <img src="./images/cv.png" alt="Computer vision modality concept" loading="lazy" />
                     <div class="topic-actions">
-                        <a class="btn secondary" href="#cv-ml">More Details</a>
+                        <a class="btn secondary" href="#cv-ml">More Details <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
 
@@ -847,14 +795,11 @@
                         <h3>Localization Technologies and Systems</h3>
                     </div>
                     <p>
-                        We build end-to-end localization systems that integrate RF, acoustic, and visual sensing under
-                        realistic indoor constraints. Our systems research emphasizes robustness to multipath,
-                        deployment variability, and limited metadata, enabling practical positioning pipelines beyond
-                        conventional camera-only or signal-only approaches.
+                        We build end-to-end localization systems using RF, acoustic, and visual sensing. Our research emphasizes system-level design that tightly integrates sensing hardware, signal processing, and machine learning. We develop practical systems capable of robust localization in complex and dynamic environments.
                     </p>
-                    <img src="./images/modality_localization.svg" alt="Localization modality concept" loading="lazy" />
+                    <img src="./images/location.png" alt="Localization modality concept" loading="lazy" />
                     <div class="topic-actions">
-                        <a class="btn secondary" href="#localization-systems">More Details</a>
+                        <a class="btn secondary" href="#localization-systems">More Details <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
             </div>
@@ -905,19 +850,19 @@
                 <p class="member-position">UIUC PhD student</p>
                 <p class="member-link">Website</p>
             </a>
-            <a class="member-tag" href="" target="_blank" rel="noopener">
+            <!-- <a class="member-tag" href="" target="_blank" rel="noopener">
                 <img src="" alt="Yiwei Tang" class="member-photo" />
                 <p class="member-name">Yiwei Tang</p>
                 <p class="member-position">UPenn Master student</p>
                 <p class="member-link">Website</p>
-            </a>
+            </a> -->
         </section>
 
         <section id="videos" class="grid" aria-label="Videos">
             <div class="section-title">
                 <div>
                     <h2>Videos &amp; Demos</h2>
-                    Demo videos and walkthroughs across our multimodal research projects.
+                    Demo videos and walkthroughs for some of our research projects.
                 </div>
             </div>
 
@@ -937,7 +882,7 @@
                         </video>
                     </div>
                     <div class="video-actions">
-                        <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">Paper</a>
+                        <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
 
@@ -955,8 +900,7 @@
                         </video>
                     </div>
                     <div class="video-actions">
-                        <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">AVR
-                            Project Page</a>
+                        <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">AVR Project Page <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
 
@@ -974,8 +918,7 @@
                         </video>
                     </div>
                     <div class="video-actions">
-                        <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
-                            rel="noopener">Versa Project Page</a>
+                        <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank" rel="noopener">Versa Project Page <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
 
@@ -993,432 +936,251 @@
                         </video>
                     </div>
                     <div class="video-actions">
-                        <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank"
-                            rel="noopener">Panoradar Project Page</a>
+                        <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank" rel="noopener">Panoradar Project Page <span aria-hidden="true">↗</span></a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="news" class="grid" aria-label="News">
-            <div class="section-title">
-                <div>
-                    <h2>News</h2>
-                    Mixed text-only updates across UPenn and UIUC.
-                </div>
-            </div>
-
-            <article class="card text-card">
-                <div class="head">
-                    <div>
-                        <h2>Recent Highlights</h2>
-                    </div>
-                </div>
-                <div class="body">
-                    <ul class="news-list">
-                        <li><b>2026:</b> [UIUC] AppleM, TouchGraph, HEAT, and GPS-ViT published across
-                            MobiCom/SIGCOMM/TMC.</li>
-                        <li><b>2025/12:</b> [UPenn] Audio-Visual Twin Reconstruction accepted to MobiSys 2026.</li>
-                        <li><b>2025:</b> [UIUC] From Pulse to Pose, T3M, Dancer, ICEProbe, Voila, and Can NeRFs See
-                            without Cameras? published.</li>
-                        <li><b>2025/09:</b> [UPenn] Invited ISS Workshop talk on neural acoustic fields and audio-visual
-                            twins.</li>
-                        <li><b>2025/08:</b> [UPenn] Audio-Visual Digital Twin Reconstruction released on arXiv.</li>
-                        <li><b>2025/05:</b> [UPenn/UIUC] Can NeRFs See without Cameras? accepted to NeurIPS 2025.</li>
-                        <li><b>2025/05:</b> [UPenn] Versa accepted to NeurIPS 2025.</li>
-                        <li><b>2024/10:</b> [UPenn/UIUC] PanoRadar journal version published in IEEE TMC.</li>
-                        <li><b>2024/09:</b> [UPenn] Acoustic Volume Rendering accepted as NeurIPS 2024 Spotlight.</li>
-                        <li><b>2024:</b> [UIUC] Similarity Beyond Vision, PanoRadar, Purr, HumidFormer, Zero to Hero,
-                            and Invisible Crackles published.</li>
-                        <li><b>2024/06:</b> [UPenn] NSF CAREER Award announced.</li>
-                    </ul>
-                    <p class="news-source">
-                        Sources:
-                        <a href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Mingmin Zhao
-                            homepage</a>,
-                        <a href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">SiNRG
-                            publications</a>
-                    </p>
-                </div>
-            </article>
-        </section>
 
         <section id="acoustic-audio" class="grid" aria-label="Acoustic and Audio Intelligence">
             <div class="section-title">
                 <div>
                     <h2>Acoustic and Audio Intelligence</h2>
-                    Projects on acoustic field modeling, inverse acoustics, and signal decomposition for robust
-                    scene understanding from audio.
+                    Recent project highlights spanning acoustic field reconstruction, generative audio editing, and inverse acoustic reasoning.
                 </div>
             </div>
 
-            <!-- AVR -->
             <article class="card">
                 <div class="head">
                     <div>
-                        <h2>AVR: Acoustic Volume Rendering for Neural Acoustic Field</h2>
+                        <h2>AVR: Acoustic Volume Rendering and Neural Impulse Response Fields</h2>
                     </div>
-                    <div class="tag">NeurIPS’24 (Spotlight)</div>
+                    <div class="tag">NeurIPS 2024 (Spotlight)</div>
                 </div>
                 <div class="body">
-                    AVR models an <b>impulse response field</b> using a neural representation inspired by volume
-                    rendering. It synthesizes RIRs at novel listener/source poses and supports efficient training and
-                    rendering, bridging real measurements and realistic simulation.
+                    AVR models a neural impulse-response field for indoor scenes and renders room acoustics at unseen source-listener pairs. The model combines physical wave propagation priors with learning-based interpolation to improve realism under sparse measurement settings. This project demonstrates how audio can recover scene-dependent structure and support robust multimodal reasoning.
                 </div>
                 <figure>
-                    <img src="./images/avr_teaser.png" alt="AVR teaser figure" loading="lazy" />
+                    <img src="./images/avr_teaser.png" alt="AVR project teaser" loading="lazy" />
                 </figure>
                 <div class="divider"></div>
                 <div class="actions">
-                    <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">
-                        Project Page
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Reciprocity -->
-            <article class="card">
-                <div class="head">
-                    <div>
-                        <h2>Versa: Reciprocity for Acoustic Field Learning</h2>
-                    </div>
-                    <div class="tag">NeurIPS’25</div>
-                </div>
-                <div class="body">
-                    Leveraging <b>acoustic reciprocity</b> as supervision, this line of work enforces physical
-                    consistency when learning acoustic fields from sparse measurements. Swapping emitter ↔ listener
-                    roles improves generalization for predicting RIRs at new source positions.
-                </div>
-                <figure>
-                    <img src="./images/versa_teaser.png" alt="Reciprocity teaser figure" loading="lazy" />
-                </figure>
-                <div class="divider"></div>
-                <div class="actions">
-                    <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
-                        rel="noopener">
-                        Project Page
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
+                    <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
 
             <article class="card">
                 <div class="head">
                     <div>
-                        <h2>Audio-Visual Twin Reconstruction</h2>
+                        <h2>Versa: Resounding Acoustic Fields with Reciprocity</h2>
                     </div>
-                    <div class="tag">To appear at Mobisys'26</div>
+                    <div class="tag">NeurIPS 2025</div>
                 </div>
                 <div class="body">
-                    AVTwin reconstructs <b>editable audio-visual digital twins</b> from commodity smartphones by
-                    combining mobile RIR capture with visual-assisted acoustic field modeling. The result supports
-                    <b>material and geometry edits</b> with acoustics updated via differentiable acoustic rendering.
+                    Versa introduces reciprocity constraints to learn acoustics from limited indoor recordings while preserving physical consistency. By coupling source-listener role symmetry with neural acoustic fields, it improves generalization across novel placements. This is a core example of physics-informed machine learning for acoustic intelligence.
                 </div>
                 <figure>
-                    <video width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);"
-                        controls>
-                        <source src="./videos/av_twin_fin.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/versa-concept.jpg" alt="Versa project teaser" loading="lazy" />
                 </figure>
                 <div class="divider"></div>
                 <div class="actions">
-                    <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">
-                        Paper (arXiv)
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
+                    <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank" rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
 
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Building Audio-Visual Digital Twins with Smartphones</h2>
+                    </div>
+                    <div class="tag">MobiSys 2026</div>
+                </div>
+                <div class="body">
+                    This project reconstructs editable digital twins from commodity smartphone captures by jointly estimating scene geometry and acoustic behavior. It supports updates to materials and layout while preserving plausible acoustics through differentiable rendering. The result is a practical path toward scalable multimodal environment modeling.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/avtwin.png" alt="Versa project teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>SmartDJ: Declarative Audio Editing with Audio Language Model</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    SmartDJ studies language-guided audio manipulation where users specify semantic edits and the system executes them on complex tracks. The approach links natural language intent to controllable audio generation pipelines and improves editing efficiency for non-expert workflows. It contributes a multimodal interface between language and structured audio transformations.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/smartdj.png" alt="Versa project teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>ArrayDPS: Unsupervised Blind Source Separation with a Diffusion Prior</h2>
+                    </div>
+                    <div class="tag">ICML 2025</div>
+                </div>
+                <div class="body">
+                    ArrayDPS addresses multi-source audio separation by combining microphone-array observations with diffusion priors in an unsupervised setup. It tackles noisy and reverberant mixtures where ground-truth labels are unavailable and classical beamforming is brittle. The project highlights robust audio intelligence under realistic sensing constraints.
+                </div>
+                <figure>
+                    <div class="placeholder">Diffusion-prior source separation from multichannel recordings</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Inverse Acoustics for Scene Decomposition</h2>
+                    </div>
+                    <div class="tag">Work in Progress</div>
+                </div>
+                <div class="body">
+                    This line of work decomposes wet recordings into dry source signals and room impulse responses to infer latent scene factors. The system estimates direct source content and propagation effects jointly, supporting downstream localization and scene retrieval. It serves as a bridge from acoustic inverse problems to practical multimodal geospatial reasoning.
+                </div>
+                <figure>
+                    <img src="./images/multirir_teaser.png" alt="Inverse acoustics project teaser" loading="lazy" />
+                </figure>
+            </article>
         </section>
-
-
 
         <section id="cv-ml" class="grid" aria-label="Computer Vision and Machine Learning">
             <div class="section-title">
                 <div>
                     <h2>Computer Vision and Machine Learning</h2>
-                    Multimodal and inverse-learning projects connecting acoustic cues with visual and geometric
-                    scene representations.
+                    Recent project highlights on generative modeling, inverse solvers, and multimodal representation learning for scene understanding.
                 </div>
             </div>
 
-
-            <!-- RIR2Depth Map -->
             <article class="card">
                 <div class="head">
                     <div>
-                        <h2>Can we “hear” the shape of a room?</h2>
+                        <h2>Next-Scale Autoregressive Models for Text-to-Motion Generation</h2>
                     </div>
-                    <div class="tag">Work in progress</div>
+                    <div class="tag">CVPR 2026</div>
                 </div>
                 <div class="body">
-                    We explore RIR-to-Depth estimation, a new inverse acoustic rendering problem that aims to infer the
-                    panoramic depth map of an indoor environment using only recorded RIR.
-                    To tackle this ambiguity, we investigate <b>generative models</b> that learn the
-                    distribution of plausible room geometries. The model learns to reason about uncertainty and
-                    <b>generate geometrically consistent layouts</b> that explain the observed echoes. This have lots of
-                    potential in the acoustic localization since we can estimate the rough indoor environment from just
-                    acoustic signatures and <b>match the potential room layout to the floor plan database</b> for
-                    localization.
+                    This project develops autoregressive generative models for controllable text-to-motion synthesis at higher fidelity and temporal consistency. It improves the mapping from linguistic intent to structured motion trajectories and supports richer downstream visual reasoning. The work demonstrates how sequence modeling and generative priors can improve multimodal perception tasks.
                 </div>
                 <figure>
-                    <img src="./images/rir_to_geometries.png" alt="AVTwin reconstruction teaser" loading="lazy" />
-                </figure>
-                <!-- <div class="divider"></div> -->
-                <!-- <div class="actions">
-                    <span class="btn secondary">Project page coming soon</span>
-                </div> -->
-            </article>
-
-            <!-- Inverse acoustics -->
-            <article id="inverse-acoustics-demo" class="card">
-                <div class="head">
-                    <div>
-                        <h2>Inverse Acoustics</h2>
-                    </div>
-                    <div class="tag">Work in progress</div>
-                </div>
-                <div class="body">
-                    In the inverse acoustics, we are trying to decompose the acoustic scene into the basic components
-                    including the <b>audio content (dry sound)</b> and <b>acoustic effects</b>.
-                    For example, a common voice recording can contains two speakers voice. And the recordings (wet
-                    sound) are also affected by the room acoustics.
-                    Our goal is to effectively decompose both the two dry speech sound sources and the room acoustic
-                    effects (RIR) from the mixed recording. This can be very useful for acoustic localization since
-                    we can estimate the room acoustic effects from the recording and match it to the floor plan
-                    database for localization. Following we show a demo.
-                </div>
-                <figure>
-                    <!-- Audio Demo Interface -->
-                    <img src="./images/multirir_teaser.png" alt="Inverse acoustic teaser" loading="lazy" />
+                    <div class="placeholder">Text-conditioned motion generation and temporal modeling</div>
                 </figure>
                 <div class="divider"></div>
                 <div class="actions">
-                    <details style="width: 100%;">
-                        <summary
-                            style="cursor: pointer; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); background: #f8fafc; color: #0f172a; font-size: 14px; list-style: none; display: flex; align-items: center; justify-content: space-between;">
-                            <span>Show Interactive Audio Demo</span>
-                            <span style="transition: transform 0.2s;">▼</span>
-                        </summary>
-                        <div
-                            style="margin-top: 16px; padding: 20px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border);">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-                            <!-- Top Section: Mixed Audio -->
-                            <div
-                                style="margin-bottom: 24px; padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
-                                <h3 style="margin: 0 0 12px 0; font-size: 16px; color: var(--text);">Mixed Recording
-                                    (Wet
-                                    Sound)</h3>
-                                <audio controls style="width: 100%; margin-bottom: 12px;">
-                                    <source src="./audio/R0035_p2.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div
-                                    style="width: 100%; height: 220px; background: white; border: 1px solid var(--border); border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: 13px;">
-                                    <img src="./images/R0035_p2.png" alt="Mixed STFT"
-                                        style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" />
-                                </div>
-                            </div>
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>CO3: Contrasting Concepts Compose Better in Diffusion Models</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    CO3 investigates concept composition in diffusion models by introducing contrastive mechanisms that improve compositional faithfulness. It targets failures where multiple semantic constraints compete during generation and improves controllability. The project is central to robust multimodal generation and inverse reasoning.
+                </div>
+                <figure>
+                    <div class="placeholder">Compositional diffusion with contrastive concept guidance</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-                            <!-- Source 1 -->
-                            <div style="margin-bottom: 16px;">
-                                <h3
-                                    style="margin: 0 0 12px 0; font-size: 15px; color: var(--text); background: linear-gradient(135deg, #eef2ff, #f1f5f9); padding: 8px 12px; border-radius: 8px;">
-                                    Source 1</h3>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Zero-shot Human Pose Estimation Using Diffusion-based Inverse Solvers</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    This project frames pose estimation as an inverse problem solved with diffusion priors, enabling zero-shot adaptation without retraining per domain. The method improves robustness when supervision is limited or sensing conditions shift. It directly connects probabilistic generation with geometric estimation in computer vision pipelines.
+                </div>
+                <figure>
+                    <div class="placeholder">Diffusion priors for zero-shot geometric inverse inference</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-                                    <!-- Source 1 Ground Truth -->
-                                    <div
-                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
-                                        <h3
-                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #22c55e; padding-bottom: 6px;">
-                                            Ground Truth</h3>
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Contrastive Diffusion Guidance for Spatial Inverse Problems</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    This work studies contrastive guidance for diffusion-based solvers in spatial inverse tasks, where ambiguity and noise make direct optimization unstable. It uses structured priors to regularize reconstruction and improve convergence toward physically plausible solutions. The approach strengthens general-purpose multimodal inverse modeling.
+                </div>
+                <figure>
+                    <div class="placeholder">Contrastive regularization for diffusion inverse solvers</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://synrg.csl.illinois.edu/pubs.html" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-                                        <!-- GT Dry Speech -->
-                                        <div style="margin-bottom: 16px;">
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
-                                                Speech
-                                            </h4>
-                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
-                                                <source src="./audio/gt_dry_R0035_p2_s0.wav" type="audio/wav">
-                                            </audio>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    STFT</div>
-                                                <img src="./images/spectrogram_gt_sound1_s0.png" alt="GT dry STFT src1"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Can NeRFs "See" without Cameras?</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2025</div>
+                </div>
+                <div class="body">
+                    Can NeRFs "See" without Cameras reconstructs 3D structure from non-visual measurements and extends neural scene representations beyond camera-centric pipelines. The method shows that geometry can be inferred from alternative sensing signals while preserving rich spatial detail. It is a key project at the intersection of CV, ML, and multimodal sensing.
+                </div>
+                <figure>
+                    <div class="placeholder">Neural scene reconstruction from non-visual measurements</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://arxiv.org/abs/2505.22441" target="_blank" rel="noopener">Paper (arXiv) <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
-                                        <!-- GT RIR -->
-                                        <div>
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
-                                                Impulse Response</h4>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    Waveform</div>
-                                                <img src="./images/rir_gt_s0.png" alt="GT RIR waveform src1"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Source 1 Estimated -->
-                                    <div
-                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
-                                        <h3
-                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #2563eb; padding-bottom: 6px;">
-                                            Estimated</h3>
-
-                                        <!-- Estimated Dry Speech -->
-                                        <div style="margin-bottom: 16px;">
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
-                                                Speech
-                                            </h4>
-                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
-                                                <source src="./audio/pred_dry_R0035_p2_s0.wav" type="audio/wav">
-                                            </audio>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    STFT</div>
-                                                <img src="./images/spectrogram_pred_sound1_s0.png"
-                                                    alt="Estimated dry STFT src1"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-
-                                        <!-- Estimated RIR -->
-                                        <div>
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
-                                                Impulse Response</h4>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    Waveform</div>
-                                                <img src="./images/rir_pred_s0.png" alt="Estimated RIR waveform src1"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Source 2 -->
-                            <div>
-                                <h3
-                                    style="margin: 0 0 12px 0; font-size: 15px; color: var(--text); background: linear-gradient(135deg, #eef2ff, #f1f5f9); padding: 8px 12px; border-radius: 8px;">
-                                    Source 2</h3>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-
-                                    <!-- Source 2 Ground Truth -->
-                                    <div
-                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
-                                        <h3
-                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #22c55e; padding-bottom: 6px;">
-                                            Ground Truth</h3>
-
-                                        <!-- GT Dry Speech -->
-                                        <div style="margin-bottom: 16px;">
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
-                                                Speech
-                                            </h4>
-                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
-                                                <source src="./audio/gt_dry_R0035_p2_s1.wav" type="audio/wav">
-                                            </audio>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    STFT</div>
-                                                <img src="./images/spectrogram_gt_sound2_s1.png" alt="GT dry STFT src2"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-
-                                        <!-- GT RIR -->
-                                        <div>
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
-                                                Impulse Response</h4>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    Waveform</div>
-                                                <img src="./images/rir_gt_s1.png" alt="GT RIR waveform src2"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Source 2 Estimated -->
-                                    <div
-                                        style="padding: 16px; background: white; border-radius: 10px; border: 1px solid var(--border);">
-                                        <h3
-                                            style="margin: 0 0 14px 0; font-size: 15px; color: var(--text); border-bottom: 2px solid #2563eb; padding-bottom: 6px;">
-                                            Estimated</h3>
-
-                                        <!-- Estimated Dry Speech -->
-                                        <div style="margin-bottom: 16px;">
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Dry
-                                                Speech
-                                            </h4>
-                                            <audio controls style="width: 100%; margin-bottom: 8px; height: 32px;">
-                                                <source src="./audio/pred_dry_R0035_p2_s1.wav" type="audio/wav">
-                                            </audio>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    STFT</div>
-                                                <img src="./images/spectrogram_pred_sound2_s1.png"
-                                                    alt="Estimated dry STFT src2"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-
-                                        <!-- Estimated RIR -->
-                                        <div>
-                                            <h4 style="margin: 0 0 8px 0; font-size: 13px; color: var(--muted);">Room
-                                                Impulse Response</h4>
-                                            <div
-                                                style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
-                                                <div
-                                                    style="font-size: 11px; color: var(--faint); padding: 4px 6px; background: #f1f5f9; text-align: center;">
-                                                    Waveform</div>
-                                                <img src="./images/rir_pred_s1.png" alt="Estimated RIR waveform src2"
-                                                    style="width: 100%; height: 120px; object-fit: contain; background: white;" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </details>
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>RIR-to-Depth: Hearing Room Geometry</h2>
+                    </div>
+                    <div class="tag">Work in Progress</div>
+                </div>
+                <div class="body">
+                    RIR-to-Depth explores an inverse-learning pipeline that predicts panoramic depth structure from room impulse responses. It leverages generative priors to resolve ambiguity and produce physically consistent scene hypotheses. This project provides a CV/ML pathway for translating acoustic signatures into visual geometric representations.
+                </div>
+                <figure>
+                    <img src="./images/rir_to_geometries.png" alt="RIR to depth inverse rendering teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="./acoustics.html">Demo Page <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
         </section>
@@ -1427,9 +1189,104 @@
             <div class="section-title">
                 <div>
                     <h2>Localization Technologies and Systems</h2>
-                    Selected prior systems in acoustic and RF localization from Mingmin Zhao and Romit Roy Choudhury.
+                    Recent project highlights on end-to-end localization pipelines using RF, acoustic, and multimodal sensing in realistic environments.
                 </div>
             </div>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>RF-Based 3D SLAM Rivaling Vision Approaches</h2>
+                    </div>
+                    <div class="tag">MobiCom 2025</div>
+                </div>
+                <div class="body">
+                    This project develops RF-based 3D SLAM with accuracy competitive with camera-based methods while operating in challenging visibility conditions. It integrates mapping, trajectory estimation, and geometric consistency checks under strong multipath effects. The work demonstrates deployable localization performance beyond imagery-only sensing.
+                </div>
+                <figure>
+                    <div class="placeholder">RF SLAM mapping and trajectory estimation pipeline</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Surface Characterization with mmWave Signals</h2>
+                    </div>
+                    <div class="tag">MobiSys 2026</div>
+                </div>
+                <div class="body">
+                    Surface Characterization with mmWave Signals estimates material and geometric properties of indoor surfaces using radar reflections. The extracted surface cues improve downstream localization and scene interpretation in spaces where visual metadata is incomplete. This contributes robust physical context for multimodal positioning systems.
+                </div>
+                <figure>
+                    <div class="placeholder">mmWave surface inference for localization context</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Motion Capture with Millimeter-Wave Tags</h2>
+                    </div>
+                    <div class="tag">SenSys 2026</div>
+                </div>
+                <div class="body">
+                    This project studies tagged mmWave motion capture for reliable tracking in cluttered indoor spaces and under weak lighting. It fuses radio measurements with learned priors to stabilize trajectory and pose estimates over time. The resulting system expands the design space for localization-centric sensing deployments.
+                </div>
+                <figure>
+                    <div class="placeholder">mmWave-tag tracking for robust indoor motion capture</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Non-Line-of-Sight 3D Reconstruction with Radar</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2025</div>
+                </div>
+                <div class="body">
+                    Non-Line-of-Sight 3D Reconstruction with Radar infers hidden geometry from indirect reflections and solves challenging occluded-scene localization settings. The model combines radar physics with learned reconstruction objectives to recover usable spatial structure. This is an important capability for indoor positioning without direct line of sight.
+                </div>
+                <figure>
+                    <div class="placeholder">NLOS geometry recovery from radar reflections</div>
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>PanoRadar: Enabling Visual Recognition at Radio Frequency</h2>
+                    </div>
+                    <div class="tag">MobiCom 2024</div>
+                </div>
+                <div class="body">
+                    PanoRadar builds panoramic scene recognition from RF signals and demonstrates strong perception performance under occlusion and adverse visual conditions. The approach produces localization-relevant spatial context when cameras are unreliable or unavailable. It is a key system-level example of multimodal localization technologies.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/panoradar.gif" alt="Versa project teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank" rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
 
             <article class="card">
                 <div class="head">
@@ -1439,83 +1296,14 @@
                     <div class="tag">MobiCom 2020</div>
                 </div>
                 <div class="body">
-                    A practical acoustic indoor localization system that estimates source position by exploiting
-                    direct-path and reflected voice signals. This project demonstrates robust localization from
-                    commodity microphone recordings in real indoor environments.
+                    Voice Localization uses direct-path and reflected speech signals to estimate source position with commodity microphones in indoor environments. The system is designed to remain robust under room reverberation and practical deployment constraints. It is a foundational localization project connecting acoustic propagation and real-world sensing.
                 </div>
                 <figure>
-                    <div class="placeholder">Acoustic localization system project</div>
+                    <div class="placeholder">Acoustic localization from wall reflections and direct-path cues</div>
                 </figure>
                 <div class="divider"></div>
                 <div class="actions">
-                    <a class="btn" href="https://synrg.csl.illinois.edu/papers/voloc_mobicom20.pdf" target="_blank"
-                        rel="noopener">
-                        Paper PDF
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="head">
-                    <div>
-                        <h2>Can NeRFs See without Cameras?</h2>
-                    </div>
-                    <div class="tag">NeurIPS 2025</div>
-                </div>
-                <div class="body">
-                    This work reconstructs indoor 3D structure from wireless reflections and demonstrates
-                    localization-relevant geometric inference without optical cameras, advancing multimodal mapping and
-                    positioning.
-                </div>
-                <figure>
-                    <div class="placeholder">Wireless inverse rendering for geometry inference</div>
-                </figure>
-                <div class="divider"></div>
-                <div class="actions">
-                    <a class="btn" href="https://arxiv.org/abs/2505.22441" target="_blank" rel="noopener">
-                        Paper (arXiv)
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="head">
-                    <div>
-                        <h2>PanoRadar: Visual Recognition with RF Signals</h2>
-                    </div>
-                    <div class="tag">MobiCom 2024</div>
-                </div>
-                <div class="body">
-                    PanoRadar builds panoramic scene understanding from RF sensing, illustrating the group's experience
-                    in non-visual localization and perception where standard camera signals are limited.
-                </div>
-                <figure>
-                    <div class="placeholder">RF-based scene understanding and localization</div>
-                </figure>
-                <div class="divider"></div>
-                <div class="actions">
-                    <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank"
-                        rel="noopener">
-                        Project Page
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M21 3l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            <path d="M10 5H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </a>
+                    <a class="btn" href="https://synrg.csl.illinois.edu/papers/voloc_mobicom20.pdf" target="_blank" rel="noopener">Paper PDF <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
         </section>
@@ -1533,8 +1321,8 @@
                 <div class="body">
                     <p class="pub-group-title">2026</p>
                     <ol class="pub-list">
-                        <li><b>Building Audio-Visual Digital Twins with Smartphones</b><div class="pub-entry">Zitong Lan, Yiwei Tang, Yuhan Wang, Haowen Lai, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026 (Conditional Accepted)</span></div></li>
-                        <li><b>Surface Characterization with mmWave Signals</b><div class="pub-entry">Haowen Lai, Zitong Lan, Dongyin Hu, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026 (Conditional Accepted)</span></div></li>
+                        <li><b>Building Audio-Visual Digital Twins with Smartphones</b><div class="pub-entry">Zitong Lan, Yiwei Tang, Yuhan Wang, Haowen Lai, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026</span></div></li>
+                        <li><b>Surface Characterization with mmWave Signals</b><div class="pub-entry">Haowen Lai, Zitong Lan, Dongyin Hu, and Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026</span></div></li>
                         <li><b>Next-Scale Autoregressive Models for Text-to-Motion Generation</b><div class="pub-entry">Zhiwei Zheng, Shibo Jin, Lingjie Liu, and Mingmin Zhao<br /><span class="pub-venue">CVPR 2026</span></div></li>
                         <li><b>Motion Capture with Millimeter-Wave Tags</b><div class="pub-entry">Xin Yang, Yifei Liu, Yunshuang Li, Yao Gong, Dinesh Jayaraman, Omid Abari, and Mingmin Zhao<br /><span class="pub-venue">SenSys 2026</span></div></li>
                         <li><b>SmartDJ: Declarative Audio Editing with Audio Language Model</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">ICLR 2026</span></div></li>
@@ -1547,8 +1335,8 @@
                     <ol class="pub-list">
                         <li><b>Non-Line-of-Sight 3D Reconstruction with Radar</b><div class="pub-entry">Haowen Lai, Zitong Lan, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
                         <li><b>Resounding Acoustic Fields with Reciprocity</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
-                        <li><b>Guiding Audio Editing with Audio Language Model</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025 Generative and Protective AI for Content Creation</span></div><span class="pub-note">Oral Presentation</span></li>
-                        <li><b>RF-Based 3D SLAM Rivaling Vision Approaches</b><div class="pub-entry">Haowen Lai*, Zhiwei Zheng*, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2025</span></div><span class="pub-note">Best Artifact Award</span></li>
+                        <li><b>Guiding Audio Editing with Audio Language Model</b><div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2025 Generative and Protective AI for Content Creation</span></div></li>
+                        <li><b>RF-Based 3D SLAM Rivaling Vision Approaches</b><div class="pub-entry">Haowen Lai*, Zhiwei Zheng*, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2025</span></div></li>
                         <li><b>Tracking Blink Dynamics and Mental States on Glasses</b><div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup Lee, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiSys 2025</span></div></li>
                         <li><b>Tracking Blink Dynamics on Smart Glasses Using mmWave Radar</b><div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup Lee, and Mingmin Zhao<br /><span class="pub-venue">The Association for Research in Vision and Ophthalmology 2025 Annual Meeting</span></div></li>
                         <li><b>Can NeRFs "See" without Cameras?</b><div class="pub-entry">Chaitanya Amballa, Sattwik Basu, Yu-Lin Wei, Z. Yang, M. Ergezer, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS 2025</span></div></li>
@@ -1560,8 +1348,8 @@
 
                     <p class="pub-group-title">2024</p>
                     <ol class="pub-list">
-                        <li><b>Acoustic Volume Rendering and Neural Impulse Response Fields</b><div class="pub-entry">Zitong Lan, Chenhao Zheng, Zhiwei Zheng, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2024</span></div><span class="pub-note">Spotlight</span></li>
-                        <li><b>Enabling Visual Recognition at Radio Frequency</b><div class="pub-entry">Haowen Lai, Gaoxiang Luo, Yifei Liu, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2024</span></div><span class="pub-note">Best Demo Award</span><span class="pub-note">First Place in Student Research Competition</span></li>
+                        <li><b>Acoustic Volume Rendering and Neural Impulse Response Fields</b><div class="pub-entry">Zitong Lan, Chenhao Zheng, Zhiwei Zheng, and Mingmin Zhao<br /><span class="pub-venue">NeurIPS 2024</span></div></li>
+                        <li><b>Enabling Visual Recognition at Radio Frequency</b><div class="pub-entry">Haowen Lai, Gaoxiang Luo, Yifei Liu, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiCom 2024</span></div></li>
                         <li><b>Development of oculomics artificial intelligence for cardiovascular risk factors: A case study in fundus oculomics for HbA1c assessment and clinically relevant considerations for clinicians</b><div class="pub-entry">Joshua Ong, Kuk Jin Jang, Seung Ju Baek, Dongyin Hu, Vivian Lin, Sooyong Jang, Alexandra Thaler, Nouran Sabbagh, Almiqdad Saeed, Minwook Kwon, Jin Hyun Kim, Seongjin Lee, Yong Seop Han, Mingmin Zhao, Oleg Sokolsky, Insup Lee, Lama A Al-Aswad<br /><span class="pub-venue">Asia-Pacific Journal of Ophthalmology 2024</span></div></li>
                         <li><b>Multi-Source Music Generation with Latent Diffusion</b><div class="pub-entry">Zhongweiyang Xu, Debottam Dutta, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS Audio Imagination Workshop 2024</span></div></li>
                         <li><b>Sample-Constrained Black Box Optimization for Audio Personalization</b><div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">AAAI 2024</span></div></li>
@@ -1578,7 +1366,7 @@
 
                     <p class="pub-group-title">2022</p>
                     <ol class="pub-list">
-                        <li><b>Wireless Sensing with Machine Learning: Through-Wall Vision &amp; Contactless Health Monitoring</b><div class="pub-entry">Mingmin Zhao<br /><span class="pub-venue">Ph.D. Dissertation 2022</span></div><span class="pub-note">ACM SIGMOBILE Doctoral Dissertation Award Runner-up</span></li>
+                        <li><b>Wireless Sensing with Machine Learning: Through-Wall Vision &amp; Contactless Health Monitoring</b><div class="pub-entry">Mingmin Zhao<br /><span class="pub-venue">Ph.D. Dissertation 2022</span></div></li>
                         <li><b>Learning to Separate Voices by Spatial Regions</b><div class="pub-entry">Zhongweiyang Xu, Romit Roy Choudhury<br /><span class="pub-venue">ICML 2022</span></div></li>
                         <li><b>PoseKernelLifter: Metric Lifting of 3D Human Pose Using Sound</b><div class="pub-entry">Zhijian Yang, Xiaoran Fan, Volkan Isler, Hyun Soo Park<br /><span class="pub-venue">IEEE/CVF CVPR 2022</span></div></li>
                     </ol>
@@ -1614,14 +1402,14 @@
                                 <li><b>LiquID: A Wireless Liquid IDentifier</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Yixuan Zhao, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys 2018</span></div></li>
                                 <li><b>Inaudible Voice Commands: The Long-Range Attack and Defense</b><div class="pub-entry">Nirupam Roy, Sheng Shen, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">NSDI 2018</span></div></li>
                                 <li><b>RF-Based 3D Skeletons</b><div class="pub-entry">Mingmin Zhao, Yonglong Tian, Hang Zhao, Mohammad Abu Alsheikh, Tianhong Li, Rumen Hristov, Zachary Kabelac, Dina Katabi, and Antonio Torralba<br /><span class="pub-venue">ACM SIGCOMM 2018</span></div></li>
-                                <li><b>Through-Wall Human Pose Estimation Using Radio Signals</b><div class="pub-entry">Mingmin Zhao, Tianhong Li, Mohammad Abu Alsheikh, Yonglong Tian, Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span class="pub-venue">CVPR 2018</span></div><span class="pub-note">Spotlight Presentation</span></li>
+                                <li><b>Through-Wall Human Pose Estimation Using Radio Signals</b><div class="pub-entry">Mingmin Zhao, Tianhong Li, Mohammad Abu Alsheikh, Yonglong Tian, Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span class="pub-venue">CVPR 2018</span></div></li>
                                 <li><b>If WiFi APs Could Move: A Measurement Study</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy Choudhury, Srihari Nelakuditi<br /><span class="pub-venue">IEEE Transactions on Mobile Computing 2018</span></div></li>
                                 <li><b>Technical perspective: Is your WiFi a sensor?</b><div class="pub-entry">Romit Roy Choudhury<br /><span class="pub-venue">Communications of the ACM 2018</span></div></li>
-                                <li><b>BackDoor: Making Microphones Hear Inaudible Sounds</b><div class="pub-entry">Nirupam Roy, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys 2017</span></div><span class="pub-note">Best Paper Award</span></li>
+                                <li><b>BackDoor: Making Microphones Hear Inaudible Sounds</b><div class="pub-entry">Nirupam Roy, Haitham Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys 2017</span></div></li>
                                 <li><b>Bringing IoT to Sports Analytics</b><div class="pub-entry">Mahanth Gowda, Ashutosh Dhekne, Sheng Shen, Romit Roy Choudhury, Xue Yang, Lei Yang, A. Essanian, S. Golwalkar<br /><span class="pub-venue">NSDI 2017</span></div></li>
                                 <li><b>Extending Cell Tower Coverage through Drones</b><div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy Choudhury<br /><span class="pub-venue">ACM HotMobile 2017</span></div></li>
                                 <li><b>Learning Sleep Stages from Radio Signals: A Conditional Adversarial Architecture</b><div class="pub-entry">Mingmin Zhao, Shichao Yue, Dina Katabi, Tommi Jaakkola, and Matt Bianchi<br /><span class="pub-venue">ICML 2017</span></div></li>
-                                <li><b>Emotion Recognition using Wireless Signals</b><div class="pub-entry">Mingmin Zhao, Fadel Adib, and Dina Katabi<br /><span class="pub-venue">ACM MobiCom 2016</span></div><span class="pub-note">ACM/CACM Research Highlights</span></li>
+                                <li><b>Emotion Recognition using Wireless Signals</b><div class="pub-entry">Mingmin Zhao, Fadel Adib, and Dina Katabi<br /><span class="pub-venue">ACM MobiCom 2016</span></div></li>
                                 <li><b>VeTrack: Real Time Vehicle Tracking in Uninstrumented Indoor Environments</b><div class="pub-entry">Mingmin Zhao, Ruipeng Gao, Tao Ye, Fan Ye, Yizhou Wang, and Guojie Luo<br /><span class="pub-venue">ACM SenSys 2015</span></div></li>
                                 <li><b>Predictive Encoding of Contextual Relationships for Perceptual Inference, Interpolation and Prediction</b><div class="pub-entry">Mingmin Zhao, Chengxu Zhuang, Yizhou Wang, and Tai Sing Lee<br /><span class="pub-venue">ICLR 2015</span></div></li>
                                 <li><b>Jigsaw: Indoor Floor Plan Reconstruction via Mobile Crowdsensing</b><div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang, Kaigui Bian, Tao Wang, and Xiaoming Li<br /><span class="pub-venue">ACM MobiCom 2014</span></div></li>
