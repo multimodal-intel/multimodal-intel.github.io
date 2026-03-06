@@ -551,13 +551,21 @@
         }
 
         .video-card .video-media {
-            padding: 0 16px 12px;
+            padding: 0;
+            width: 100%;
+            line-height: 0;
         }
 
-        .video-card .video-media video {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+        .video-card .video-media video,
+        .video-card .video-media iframe {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: cover;
         }
 
         .video-card .video-placeholder {

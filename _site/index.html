@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-Modal Intelligence</title>
+    <meta name="description"
+        content="A curated overview of multimodal intelligence research spanning audio, vision, and RF sensing for robust geospatial reasoning." />
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header class="hero">
+            <h1>Multi-Modal Intelligence</h1>
+            We are a joint research team led by investigators at the University of Pennsylvania (UPenn) and the
+            University of Illinois Urbana-Champaign (UIUC), focused on building next-generation multimodal intelligence
+            systems for real-world scene understanding and geospatial reasoning. Our vision is to move beyond
+            single-modality by tightly integrating audio, vision, and RF sensing with physics-informed
+            machine learning. We study how signal propagation, 3D geometry, and learned
+            representations can be combined to solve inverse problems and infer where events occur and how scenes can be
+            reconstructed. The three themes below highlight our prior and ongoing
+            work in acoustic and audio intelligence, computer vision and machine learning, and localization systems.
+        </header>
+
+        <nav class="jumpbar" aria-label="Section Navigation">
+            <span class="jump-label">Jump To</span>
+            <a class="pill" href="#people">People</a>
+            <a class="pill" href="#videos">Videos & Demos</a>
+            <a class="pill" href="#acoustic-audio">Research: Acoustic & Audio</a>
+            <a class="pill" href="#cv-ml">Research: CV & ML</a>
+            <a class="pill" href="#localization-systems">Research: Localization</a>
+            <a class="pill" href="#publications">Publications</a>
+        </nav>
+
+        <section id="topics-overview" class="grid" aria-label="Research Topics Overview">
+            <div class="section-title">
+                <div>
+                    <h2>Research Topics</h2>
+                    Three core directions that connect our joint UPenn-UIUC research agenda.
+                </div>
+            </div>
+
+            <div class="topics-grid">
+                <article class="topic-card">
+                    <div class="topic-head">
+                        <h3>Acoustic and Audio Intelligence</h3>
+                    </div>
+                    <p>
+                        We model acoustic fields and room impulse response, and study inverse acoustics to
+                        recover scene structure and source characteristics from real-world recordings. By combining
+                        physical propagation priors with learning-based inference, we make audio a reliable modality
+                        for robust environmental reasoning and location inference.
+                    </p>
+                    <img src="./images/audio.png" alt="Acoustic and audio modality concept" loading="lazy" />
+                    <div class="topic-actions">
+                        <a class="btn secondary" href="#acoustic-audio">More Details <span
+                                aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="topic-head">
+                        <h3>Computer Vision and Machine Learning</h3>
+                    </div>
+                    <p>
+                        We develop multimodal learning and inverse rendering methods that infer geometry, semantics,
+                        and uncertainty from sparse or noisy signals. This line of work connects visual observations,
+                        generative priors, and cross-modal supervision to improve scene understanding with complementary
+                        capabilities across multiple modalities.
+                    </p>
+                    <img src="./images/cv.png" alt="Computer vision modality concept" loading="lazy" />
+                    <div class="topic-actions">
+                        <a class="btn secondary" href="#cv-ml">More Details <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="topic-head">
+                        <h3>Localization Technologies and Systems</h3>
+                    </div>
+                    <p>
+                        We build end-to-end localization systems using RF, acoustic, and visual sensing. Our research
+                        emphasizes system-level design that tightly integrates sensing hardware, signal processing, and
+                        machine learning. We develop practical systems capable of robust localization in complex and
+                        dynamic environments.
+                    </p>
+                    <img src="./images/location.png" alt="Localization modality concept" loading="lazy" />
+                    <div class="topic-actions">
+                        <a class="btn secondary" href="#localization-systems">More Details <span
+                                aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="people" class="team-header" aria-label="Team Introduction">
+            <h2>People</h2>
+            <p>Meet the people behind our multimodal intelligence research.</p>
+        </section>
+
+        <section class="members" aria-label="Team Members">
+            <a class="member-tag" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">
+                <img src="images/mingmin_photo.png" alt="Member 1" class="member-photo" />
+                <p class="member-name">Mingmin Zhao</p>
+                <p class="member-position">Assistant Professor at UPenn</p>
+                <p class="member-link">Website</p>
+            </a>
+            <a class="member-tag" href="https://croy.web.engr.illinois.edu/" target="_blank" rel="noopener">
+                <img src="images/romit_photo.jpeg" alt="Member 2" class="member-photo" />
+                <p class="member-name">Romit Roy Choudhury</p>
+                <p class="member-position">Professor at UIUC</p>
+                <p class="member-link">Website</p>
+            </a>
+        </section>
+
+        <section class="members" aria-label="Team Members">
+            <a class="member-tag" href="https://zitonglan.github.io/" target="_blank" rel="noopener">
+                <img src="images/zitong_photo.jpeg" alt="Member 1" class="member-photo" />
+                <p class="member-name">Zitong Lan</p>
+                <p class="member-position">UPenn PhD student</p>
+                <p class="member-link">Website</p>
+            </a>
+            <a class="member-tag" href="https://yiduohao.github.io/" target="_blank" rel="noopener">
+                <img src="images/yiduo_photo.jpeg" alt="Member 2" class="member-photo" />
+                <p class="member-name">Yiduo Hao</p>
+                <p class="member-position">UPenn PhD student</p>
+                <p class="member-link">Website</p>
+            </a>
+            <a class="member-tag" href="https://haowenlai.github.io/" target="_blank" rel="noopener">
+                <img src="images/haowen-lai.jpg" alt="Member 2" class="member-photo" />
+                <p class="member-name">Haowen Lai</p>
+                <p class="member-position">UPenn PhD student</p>
+                <p class="member-link">Website</p>
+            </a>
+            <a class="member-tag" href="https://achaitanya.web.illinois.edu/" target="_blank" rel="noopener">
+                <img src="images/chaitanya_banner.png" alt="member" class="member-photo" />
+                <p class="member-name">Chaitanya Amballa</p>
+                <p class="member-position">UIUC PhD student</p>
+                <p class="member-link">Website</p>
+            </a>
+            <!-- <a class="member-tag" href="" target="_blank" rel="noopener">
+                <img src="" alt="Yiwei Tang" class="member-photo" />
+                <p class="member-name">Yiwei Tang</p>
+                <p class="member-position">UPenn Master student</p>
+                <p class="member-link">Website</p>
+            </a> -->
+        </section>
+
+        <section id="videos" class="grid" aria-label="Videos">
+            <div class="section-title">
+                <div>
+                    <h2>Videos &amp; Demos</h2>
+                    Demo videos and walkthroughs for some of our research projects.
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="video-head">
+                        <h3>Audio-Visual Twin Reconstruction</h3>
+                    </div>
+                    <p>
+                        End-to-end demo for reconstructing editable audio-visual digital twins from commodity smartphone
+                        captures.
+                    </p>
+                    <div class="video-media">
+                        <iframe src="https://www.youtube.com/embed/k31nKDRhJJw" loading="lazy" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-actions">
+                        <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">Paper
+                            <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-head">
+                        <h3>AVR Demo</h3>
+                    </div>
+                    <p>
+                        Neural acoustic field rendering demos and qualitative results for novel source/listener poses.
+                    </p>
+                    <div class="video-media">
+                        <video controls>
+                            <source src="https://zitonglan.github.io/project/avr/static/videos/raf_empty_demo.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-actions">
+                        <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">AVR Project
+                            Page <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-head">
+                        <h3>Versa Presentaion</h3>
+                    </div>
+                    <p>
+                        Acoustic reciprocity learning demos showing physically consistent acoustic-field generalization.
+                    </p>
+                    <div class="video-media">
+                        <iframe src="https://www.youtube.com/embed/Zu1JsYG_k5E" loading="lazy" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-actions">
+                        <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
+                            rel="noopener">Versa Project Page <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-head">
+                        <h3>PanoRadar Demo</h3>
+                    </div>
+                    <p>
+                        RF-based visual understanding demos for recognition and scene reasoning in challenging settings.
+                    </p>
+                    <div class="video-media">
+                        <iframe type="text/html" src="https://www.youtube.com/embed/dKyQ1XuPorU?si=2C2en68cLWDNOS41"
+                            title="PanoRadar Teaser Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-actions">
+                        <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank"
+                            rel="noopener">Panoradar Project Page <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <section id="acoustic-audio" class="grid" aria-label="Acoustic and Audio Intelligence">
+            <div class="section-title">
+                <div>
+                    <h2>Acoustic and Audio Intelligence</h2>
+                    Recent project highlights spanning acoustic field reconstruction, generative audio editing, and
+                    inverse acoustic reasoning.
+                </div>
+            </div>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>AVR: Acoustic Volume Rendering and Neural Impulse Response Fields</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2024 (Spotlight)</div>
+                </div>
+                <div class="body">
+                    AVR models a neural impulse-response field for indoor scenes and renders room acoustics at unseen
+                    source-listener pairs. The model combines physical wave propagation priors with learning-based
+                    interpolation to improve realism under sparse measurement settings. This project demonstrates how
+                    audio can recover scene-dependent structure and support robust multimodal reasoning.
+                </div>
+                <figure>
+                    <img src="./images/avr_teaser.png" alt="AVR project teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://zitonglan.github.io/avr" target="_blank" rel="noopener">Project Page
+                        <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Versa: Resounding Acoustic Fields with Reciprocity</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2025</div>
+                </div>
+                <div class="body">
+                    Versa introduces reciprocity constraints to learn acoustics from limited indoor recordings while
+                    preserving physical consistency. By coupling source-listener role symmetry with neural acoustic
+                    fields, it improves generalization across novel placements. This is a core example of
+                    physics-informed machine learning for acoustic intelligence.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/versa-concept.jpg" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://zitonglan.github.io/project/versa/versa.html" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Building Audio-Visual Digital Twins with Smartphones</h2>
+                    </div>
+                    <div class="tag">MobiSys 2026</div>
+                </div>
+                <div class="body">
+                    This project reconstructs editable digital twins from commodity smartphone captures by jointly
+                    estimating scene geometry and acoustic behavior. It supports updates to materials and layout while
+                    preserving plausible acoustics through differentiable rendering. The result is a practical path
+                    toward scalable multimodal environment modeling.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/avtwin.png" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://arxiv.org/abs/2512.10778" target="_blank" rel="noopener">Paper <span
+                            aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>SmartDJ: Declarative Audio Editing with Audio Language Model</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    SmartDJ studies language-guided audio manipulation where users specify semantic edits and the system
+                    executes them on complex tracks. The approach links natural language intent to controllable audio
+                    generation pipelines and improves editing efficiency for non-expert workflows. It contributes a
+                    multimodal interface between language and structured audio transformations.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/smartdj.png" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://zitonglan.github.io/project/smartdj/smartdj.html" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>ArrayDPS: Unsupervised Blind Source Separation with a Diffusion Prior</h2>
+                    </div>
+                    <div class="tag">ICML 2025</div>
+                </div>
+                <div class="body">
+                    ArrayDPS addresses multi-source audio separation by combining microphone-array observations with
+                    diffusion priors in an unsupervised setup. It tackles noisy and reverberant mixtures where
+                    ground-truth labels are unavailable and classical beamforming is brittle. The project highlights
+                    robust audio intelligence under realistic sensing constraints.
+                </div>
+                <figure>
+                    <img src="./images/array_dps.jpg" alt="array_dps" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://export.arxiv.org/pdf/2505.05657" target="_blank" rel="noopener">Paper
+                        PDF<span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Inverse Acoustics for Scene Decomposition</h2>
+                    </div>
+                    <div class="tag">Work in Progress</div>
+                </div>
+                <div class="body">
+                    This line of work decomposes wet recordings into dry source signals and room impulse responses to
+                    infer latent scene factors. The system estimates direct source content and propagation effects
+                    jointly, supporting downstream localization and scene retrieval. It serves as a bridge from acoustic
+                    inverse problems to practical multimodal geospatial reasoning.
+                </div>
+                <figure>
+                    <img src="./images/IA_teaser.png" alt="Inverse acoustics project teaser" loading="lazy" />
+                </figure>
+            </article>
+        </section>
+
+        <section id="cv-ml" class="grid" aria-label="Computer Vision and Machine Learning">
+            <div class="section-title">
+                <div>
+                    <h2>Computer Vision and Machine Learning</h2>
+                    Recent project highlights on generative modeling, inverse solvers, and multimodal representation
+                    learning for scene understanding.
+                </div>
+            </div>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Next-Scale Autoregressive Models for Text-to-Motion Generation</h2>
+                    </div>
+                    <div class="tag">CVPR 2026</div>
+                </div>
+                <div class="body">
+                    This project develops autoregressive generative models for controllable text-to-motion synthesis at
+                    higher fidelity and temporal consistency. It improves the mapping from linguistic intent to
+                    structured motion trajectories and supports richer downstream visual reasoning. The work
+                    demonstrates how sequence modeling and generative priors can improve multimodal perception tasks.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/moscale.jpg" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <!-- <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div> -->
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>CO3: Contrasting Concepts Compose Better in Diffusion Models</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    CO3 investigates concept composition in diffusion models by introducing contrastive mechanisms that
+                    improve compositional faithfulness. It targets failures where multiple semantic constraints compete
+                    during generation and improves controllability. The project is central to robust multimodal
+                    generation and inverse reasoning.
+                </div>
+                <figure>
+                    <img src="https://debottam-dutta7.github.io/co3_web/assets/fig1_v6.png" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://openreview.net/pdf?id=NwgwWxrD0l" target="_blank" rel="noopener">Paper
+                        PDF<span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Zero-shot Human Pose Estimation Using Diffusion-based Inverse Solvers</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    This project frames pose estimation as an inverse problem solved with diffusion priors, enabling
+                    zero-shot adaptation without retraining per domain. The method improves robustness when supervision
+                    is limited or sensing conditions shift. It directly connects probabilistic generation with geometric
+                    estimation in computer vision pipelines.
+                </div>
+                <figure>
+                    <img src="./images/InPose.png" alt="Diffusion priors for zero-shot geometric inverse inference"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://iclrinpose-crypto.github.io/ICLRInPose" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Contrastive Diffusion Guidance for Spatial Inverse Problems</h2>
+                    </div>
+                    <div class="tag">ICLR 2026</div>
+                </div>
+                <div class="body">
+                    This work studies contrastive guidance for diffusion-based solvers in spatial inverse tasks, where
+                    ambiguity and noise make direct optimization unstable. It uses structured priors to regularize
+                    reconstruction and improve convergence toward physically plausible solutions. The approach
+                    strengthens general-purpose multimodal inverse modeling.
+                </div>
+                <figure>
+                    <img src="https://coguide.github.io/static/images/real_world.png"
+                        alt="Contrastive regularization for diffusion inverse solvers" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://coguide.github.io" target="_blank" rel="noopener">Project Page <span
+                            aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Can NeRFs "See" without Cameras?</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2025</div>
+                </div>
+                <div class="body">
+                    Can NeRFs "See" without Cameras reconstructs 3D structure from non-visual measurements and extends
+                    neural scene representations beyond camera-centric pipelines. The method shows that geometry can be
+                    inferred from alternative sensing signals while preserving rich spatial detail. It is a key project
+                    at the intersection of CV, ML, and multimodal sensing.
+                </div>
+                <figure>
+                    <img src="https://echonerf.github.io/static/images/intro6.png"
+                        alt="Neural scene reconstruction from non-visual measurements" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://echonerf.github.io/" target="_blank" rel="noopener">Project Page <span
+                            aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>RIR-to-Depth: Hearing Room Geometry</h2>
+                    </div>
+                    <div class="tag">Work in Progress</div>
+                </div>
+                <div class="body">
+                    RIR-to-Depth explores an inverse-learning pipeline that predicts panoramic depth structure from room
+                    impulse responses. It leverages generative priors to resolve ambiguity and produce physically
+                    consistent scene hypotheses. This project provides a CV/ML pathway for translating acoustic
+                    signatures into visual geometric representations.
+                </div>
+                <figure>
+                    <img src="./images/rir_to_geometries.png" alt="RIR to depth inverse rendering teaser"
+                        loading="lazy" />
+                </figure>
+                <!-- <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="./acoustics.html">Demo Page <span aria-hidden="true">↗</span></a>
+                </div> -->
+            </article>
+        </section>
+
+        <section id="localization-systems" class="grid" aria-label="Localization Systems">
+            <div class="section-title">
+                <div>
+                    <h2>Localization Technologies and Systems</h2>
+                    Recent project highlights on end-to-end localization pipelines using RF, acoustic, and multimodal
+                    sensing in realistic environments.
+                </div>
+            </div>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>RF-Based 3D SLAM Rivaling Vision Approaches</h2>
+                    </div>
+                    <div class="tag">MobiCom 2025</div>
+                </div>
+                <div class="body">
+                    This project develops RF-based 3D SLAM with accuracy competitive with camera-based methods while
+                    operating in challenging visibility conditions. It integrates mapping, trajectory estimation, and
+                    geometric consistency checks under strong multipath effects. The work demonstrates deployable
+                    localization performance beyond imagery-only sensing.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/cartoradar.png" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://waves.seas.upenn.edu/projects/cartoradar" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Surface Characterization with mmWave Signals</h2>
+                    </div>
+                    <div class="tag">MobiSys 2026</div>
+                </div>
+                <div class="body">
+                    Surface Characterization with mmWave Signals estimates material and geometric properties of indoor
+                    surfaces using radar reflections. The extracted surface cues improve downstream localization and
+                    scene interpretation in spaces where visual metadata is incomplete. This contributes robust physical
+                    context for multimodal positioning systems.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/surfradar.jpg" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <!-- <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div> -->
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Motion Capture with Millimeter-Wave Tags</h2>
+                    </div>
+                    <div class="tag">SenSys 2026</div>
+                </div>
+                <div class="body">
+                    This project studies tagged mmWave motion capture for reliable tracking in cluttered indoor spaces
+                    and under weak lighting. It fuses radio measurements with learned priors to stabilize trajectory and
+                    pose estimates over time. The resulting system expands the design space for localization-centric
+                    sensing deployments.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/mo3cap.jpg" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <!-- <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://www.cis.upenn.edu/~mingminz/" target="_blank" rel="noopener">Project Listing <span aria-hidden="true">↗</span></a>
+                </div> -->
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Non-Line-of-Sight 3D Reconstruction with Radar</h2>
+                    </div>
+                    <div class="tag">NeurIPS 2025</div>
+                </div>
+                <div class="body">
+                    Non-Line-of-Sight 3D Reconstruction with Radar infers hidden geometry from indirect reflections and
+                    solves challenging occluded-scene localization settings. The model combines radar physics with
+                    learned reconstruction objectives to recover usable spatial structure. This is an important
+                    capability for indoor positioning without direct line of sight.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/holoradar.png" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://waves.seas.upenn.edu/projects/holoradar" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>PanoRadar: Enabling Visual Recognition at Radio Frequency</h2>
+                    </div>
+                    <div class="tag">MobiCom 2024</div>
+                </div>
+                <div class="body">
+                    PanoRadar builds panoramic scene recognition from RF signals and demonstrates strong perception
+                    performance under occlusion and adverse visual conditions. The approach produces
+                    localization-relevant spatial context when cameras are unreliable or unavailable. It is a key
+                    system-level example of multimodal localization technologies.
+                </div>
+                <figure>
+                    <img src="https://www.cis.upenn.edu/~mingminz/files/panoradar.gif" alt="Versa project teaser"
+                        loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://haowenlai.github.io/PanoRadar-Website/index.html" target="_blank"
+                        rel="noopener">Project Page <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="head">
+                    <div>
+                        <h2>Voice Localization using Nearby Wall Reflections</h2>
+                    </div>
+                    <div class="tag">MobiCom 2020</div>
+                </div>
+                <div class="body">
+                    Voice Localization uses direct-path and reflected speech signals to estimate source position with
+                    commodity microphones in indoor environments. The system is designed to remain robust under room
+                    reverberation and practical deployment constraints. It is a foundational localization project
+                    connecting acoustic propagation and real-world sensing.
+                </div>
+                <figure>
+                    <img src="./images/acoustic_localization.png" Versa project teaser" loading="lazy" />
+                </figure>
+                <div class="divider"></div>
+                <div class="actions">
+                    <a class="btn" href="https://synrg.csl.illinois.edu/papers/voloc_mobicom20.pdf" target="_blank"
+                        rel="noopener">Paper PDF <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </section>
+
+        <section id="publications" class="grid" aria-label="Publications">
+            <div class="section-title">
+                <div>
+                    <h2>Publications</h2>
+                </div>
+            </div>
+
+            <article class="card text-card">
+                <div class="head">
+                </div>
+                <div class="body">
+                    <p class="pub-group-title">2026</p>
+                    <ol class="pub-list">
+                        <li><b>Building Audio-Visual Digital Twins with Smartphones</b>
+                            <div class="pub-entry">Zitong Lan, Yiwei Tang, Yuhan Wang, Haowen Lai, Yiduo Hao, and
+                                Mingmin Zhao<br /><span class="pub-venue">MobiSys 2026</span></div>
+                        </li>
+                        <li><b>Surface Characterization with mmWave Signals</b>
+                            <div class="pub-entry">Haowen Lai, Zitong Lan, Dongyin Hu, and Mingmin Zhao<br /><span
+                                    class="pub-venue">MobiSys 2026</span></div>
+                        </li>
+                        <li><b>Next-Scale Autoregressive Models for Text-to-Motion Generation</b>
+                            <div class="pub-entry">Zhiwei Zheng, Shibo Jin, Lingjie Liu, and Mingmin Zhao<br /><span
+                                    class="pub-venue">CVPR 2026</span></div>
+                        </li>
+                        <li><b>Motion Capture with Millimeter-Wave Tags</b>
+                            <div class="pub-entry">Xin Yang, Yifei Liu, Yunshuang Li, Yao Gong, Dinesh Jayaraman, Omid
+                                Abari, and Mingmin Zhao<br /><span class="pub-venue">SenSys 2026</span></div>
+                        </li>
+                        <li><b>SmartDJ: Declarative Audio Editing with Audio Language Model</b>
+                            <div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span
+                                    class="pub-venue">ICLR 2026</span></div>
+                        </li>
+                        <li><b>CO3: Contrasting Concepts Compose Better in Diffusion Models</b>
+                            <div class="pub-entry">Debottam Dutta, Jianchong Chen, Rajalaxmi Rajagopalan, Yu-lin Wei,
+                                Romit Roy Choudhury<br /><span class="pub-venue">ICLR 2026</span></div>
+                        </li>
+                        <li><b>Zero-shot Human Pose Estimation using Diffusion-based Inverse solvers</b>
+                            <div class="pub-entry">Sahil Bhandary, Romit Roy Choudhury<br /><span class="pub-venue">ICLR
+                                    2026</span></div>
+                        </li>
+                        <li><b>Contrastive Diffusion Guidance for Spatial Inverse Problems</b>
+                            <div class="pub-entry">Sattwik Basu, Chaitanya Amballa, Alan Xu, Jorge Sampedro, Srihari
+                                Nelakuditi, Romit Roy Choudhury<br /><span class="pub-venue">ICLR 2026</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2025</p>
+                    <ol class="pub-list">
+                        <li><b>Non-Line-of-Sight 3D Reconstruction with Radar</b>
+                            <div class="pub-entry">Haowen Lai, Zitong Lan, and Mingmin Zhao<br /><span
+                                    class="pub-venue">NeurIPS 2025</span></div>
+                        </li>
+                        <li><b>Resounding Acoustic Fields with Reciprocity</b>
+                            <div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span
+                                    class="pub-venue">NeurIPS 2025</span></div>
+                        </li>
+                        <li><b>Guiding Audio Editing with Audio Language Model</b>
+                            <div class="pub-entry">Zitong Lan, Yiduo Hao, and Mingmin Zhao<br /><span
+                                    class="pub-venue">NeurIPS 2025 Generative and Protective AI for Content
+                                    Creation</span></div>
+                        </li>
+                        <li><b>RF-Based 3D SLAM Rivaling Vision Approaches</b>
+                            <div class="pub-entry">Haowen Lai*, Zhiwei Zheng*, and Mingmin Zhao<br /><span
+                                    class="pub-venue">ACM MobiCom 2025</span></div>
+                        </li>
+                        <li><b>Tracking Blink Dynamics and Mental States on Glasses</b>
+                            <div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup
+                                Lee, and Mingmin Zhao<br /><span class="pub-venue">ACM MobiSys 2025</span></div>
+                        </li>
+                        <li><b>Tracking Blink Dynamics on Smart Glasses Using mmWave Radar</b>
+                            <div class="pub-entry">Dongyin Hu, Xin Yang, Ahhyun Yuh, Zihao Wang, Lama Al-Aswad, Insup
+                                Lee, and Mingmin Zhao<br /><span class="pub-venue">The Association for Research in
+                                    Vision and Ophthalmology 2025 Annual Meeting</span></div>
+                        </li>
+                        <li><b>Can NeRFs "See" without Cameras?</b>
+                            <div class="pub-entry">Chaitanya Amballa, Sattwik Basu, Yu-Lin Wei, Z. Yang, M. Ergezer,
+                                Romit Roy Choudhury<br /><span class="pub-venue">NeurIPS 2025</span></div>
+                        </li>
+                        <li><b>ArrayDPS: Unsupervised Blind Source Separation with a Diffusion Prior</b>
+                            <div class="pub-entry">Zhongweiyang Xu, Xulin Fan, Zhong-Qiu Wang, Xilin Jiang, Romit Roy
+                                Choudhury<br /><span class="pub-venue">ICML 2025</span></div>
+                        </li>
+                        <li><b>Estimating Multi-chirp Parameters using Curvature-guided Langevin Monte Carlo</b>
+                            <div class="pub-entry">Sattwik Basu, Debottam Dutta, Yu-Lin Wei, Romit Roy
+                                Choudhury<br /><span class="pub-venue">IEEE ICASSP 2025</span></div>
+                        </li>
+                        <li><b>Kernel Learning for Sample Constrained Black-Box Optimization</b>
+                            <div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">AAAI 2025</span></div>
+                        </li>
+                        <li><b>Unsupervised Multi-channel Speech Dereverberation via Diffusion</b>
+                            <div class="pub-entry">Yulun Wu, Zhongweiyang Xu, Jianchong Chen, Zhong-Qiu Wang, Romit Roy
+                                Choudhury<br /><span class="pub-venue">WASPAA 2025</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2024</p>
+                    <ol class="pub-list">
+                        <li><b>Acoustic Volume Rendering and Neural Impulse Response Fields</b>
+                            <div class="pub-entry">Zitong Lan, Chenhao Zheng, Zhiwei Zheng, and Mingmin Zhao<br /><span
+                                    class="pub-venue">NeurIPS 2024</span></div>
+                        </li>
+                        <li><b>Enabling Visual Recognition at Radio Frequency</b>
+                            <div class="pub-entry">Haowen Lai, Gaoxiang Luo, Yifei Liu, and Mingmin Zhao<br /><span
+                                    class="pub-venue">ACM MobiCom 2024</span></div>
+                        </li>
+                        <li><b>Development of oculomics artificial intelligence for cardiovascular risk factors: A case
+                                study in fundus oculomics for HbA1c assessment and clinically relevant considerations
+                                for clinicians</b>
+                            <div class="pub-entry">Joshua Ong, Kuk Jin Jang, Seung Ju Baek, Dongyin Hu, Vivian Lin,
+                                Sooyong Jang, Alexandra Thaler, Nouran Sabbagh, Almiqdad Saeed, Minwook Kwon, Jin Hyun
+                                Kim, Seongjin Lee, Yong Seop Han, Mingmin Zhao, Oleg Sokolsky, Insup Lee, Lama A
+                                Al-Aswad<br /><span class="pub-venue">Asia-Pacific Journal of Ophthalmology 2024</span>
+                            </div>
+                        </li>
+                        <li><b>Multi-Source Music Generation with Latent Diffusion</b>
+                            <div class="pub-entry">Zhongweiyang Xu, Debottam Dutta, Yu-Lin Wei, Romit Roy
+                                Choudhury<br /><span class="pub-venue">NeurIPS Audio Imagination Workshop 2024</span>
+                            </div>
+                        </li>
+                        <li><b>Sample-Constrained Black Box Optimization for Audio Personalization</b>
+                            <div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">AAAI 2024</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2023</p>
+                    <ol class="pub-list">
+                        <li><b>Seeing Through Clouds in Satellite Images</b>
+                            <div class="pub-entry">Mingmin Zhao, Peder Olsen, and Ranveer Chandra<br /><span
+                                    class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing 2023</span>
+                            </div>
+                        </li>
+                        <li><b>Multi-Channel Speech Enhancement For SPEAR Challenge: A Three Stage Approach</b>
+                            <div class="pub-entry">Zhongweiyang Xu, Debottam Dutta, Xulin Fan, Mark Hasegawa-Johnson,
+                                Romit Roy Choudhury<br /><span class="pub-venue">SPEAR Challenge (2nd Rank) 2023</span>
+                            </div>
+                        </li>
+                        <li><b>Audio Personalization through Human-in-the-loop Optimization</b>
+                            <div class="pub-entry">Rajalaxmi Rajagopalan, Yu-Lin Wei, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">NeurIPS Workshop on ML for Audio 2023</span></div>
+                        </li>
+                        <li><b>Self-Supervised Speech Denoising with Multi-Modal Data</b>
+                            <div class="pub-entry">Yu-Lin Wei, Rajalaxmi Rajagopalan, Bashima Islam, Romit Roy
+                                Choudhury<br /><span class="pub-venue">NeurIPS Workshop on ML for Audio 2023</span>
+                            </div>
+                        </li>
+                        <li><b>RoSS: Rotation-induced Aliasing for Audio Source Separation</b>
+                            <div class="pub-entry">Hyungjoo Seo, Sahil Bhandary Karnoor, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">ICRA 2023</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2022</p>
+                    <ol class="pub-list">
+                        <li><b>Wireless Sensing with Machine Learning: Through-Wall Vision &amp; Contactless Health
+                                Monitoring</b>
+                            <div class="pub-entry">Mingmin Zhao<br /><span class="pub-venue">Ph.D. Dissertation
+                                    2022</span></div>
+                        </li>
+                        <li><b>Learning to Separate Voices by Spatial Regions</b>
+                            <div class="pub-entry">Zhongweiyang Xu, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">ICML 2022</span></div>
+                        </li>
+                        <li><b>PoseKernelLifter: Metric Lifting of 3D Human Pose Using Sound</b>
+                            <div class="pub-entry">Zhijian Yang, Xiaoran Fan, Volkan Isler, Hyun Soo Park<br /><span
+                                    class="pub-venue">IEEE/CVF CVPR 2022</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2021</p>
+                    <ol class="pub-list">
+                        <li><b>Assessment of Medication Self-Administration using Artificial Intelligence</b>
+                            <div class="pub-entry">Mingmin Zhao*, Kreshnik Hoti*, Hao Wang, Aniruddh Raghu, and Dina
+                                Katabi<br /><span class="pub-venue">Nature Medicine</span>, 27, 727-735 (2021)</div>
+                        </li>
+                        <li><b>Inferring Facing Direction from Voice Signals</b>
+                            <div class="pub-entry">Yu-Lin Wei, Rui Li, Abhinav Mehrotra, Romit Roy Choudhury, Nic
+                                Lane<br /><span class="pub-venue">arXiv 2021</span></div>
+                        </li>
+                        <li><b>Personalizing Head Related Transfer Functions for Earables</b>
+                            <div class="pub-entry">Zhijian Yang, Romit Roy Choudhury<br /><span class="pub-venue">ACM
+                                    SIGCOMM 2021</span></div>
+                        </li>
+                        <li><b>Angle-of-arrival (AOA) Factorization in Multipath Channels</b>
+                            <div class="pub-entry">Yu-Lin Wei, Romit Roy Choudhury<br /><span class="pub-venue">IEEE
+                                    ICASSP 2021</span></div>
+                        </li>
+                        <li><b>Earable Computing: A New Area to Think About</b>
+                            <div class="pub-entry">Romit Roy Choudhury<br /><span class="pub-venue">ACM HotMobile
+                                    2021</span></div>
+                        </li>
+                    </ol>
+
+                    <p class="pub-group-title">2020</p>
+                    <ol class="pub-list">
+                        <li><b>Voice Localization Using Nearby Wall Reflections</b>
+                            <div class="pub-entry">Sheng Shen, Daguan Chen, Yu-Lin Wei, Zhijian Yang, Romit Roy
+                                Choudhury<br /><span class="pub-venue">ACM MobiCom 2020</span></div>
+                        </li>
+                        <li><b>Ear-AR: Indoor Acoustic Augmented Reality on Earphones</b>
+                            <div class="pub-entry">Zhijian Yang, Yu-Lin Wei, Sheng Shen, Romit Roy Choudhury<br /><span
+                                    class="pub-venue">ACM MobiCom 2020</span></div>
+                        </li>
+                        <li><b>EarSense: Earphones as a Teeth Activity Sensor</b>
+                            <div class="pub-entry">Jay Prakash, Zhijian Yang, Yu-Lin Wei, Haitham Hassanieh, Romit Roy
+                                Choudhury<br /><span class="pub-venue">ACM MobiCom 2020</span></div>
+                        </li>
+                    </ol>
+
+                    <details style="margin-top: 12px;">
+                        <summary class="btn secondary" style="cursor:pointer; width:max-content;">Pre-2020 Publications
+                        </summary>
+                        <div style="margin-top: 12px;">
+                            <ol class="pub-list">
+                                <li><b>Making the Invisible Visible: Action Recognition Through Walls and Occlusions</b>
+                                    <div class="pub-entry">Tianhong Li*, Lijie Fan*, Mingmin Zhao, Yingcheng Liu, and
+                                        Dina Katabi<br /><span class="pub-venue">ICCV 2019</span></div>
+                                </li>
+                                <li><b>Through-Wall Human Mesh Recovery Using Radio Signals</b>
+                                    <div class="pub-entry">Mingmin Zhao, Yingcheng Liu, Aniruddh Raghu, Tianhong Li,
+                                        Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span class="pub-venue">ICCV
+                                            2019</span></div>
+                                </li>
+                                <li><b>Enabling Identification and Behavioral Sensing in Homes using Radio
+                                        Reflections</b>
+                                    <div class="pub-entry">Chen-Yu Hsu, Rumen Hristov, Guang-He Lee, Mingmin Zhao, and
+                                        Dina Katabi<br /><span class="pub-venue">ACM CHI 2019</span></div>
+                                </li>
+                                <li><b>Bidirectional Inference Networks: A Class of Deep Bayesian Networks for Health
+                                        Profiling</b>
+                                    <div class="pub-entry">Hao Wang, Chengzhi Mao, Hao He, Mingmin Zhao, Dina Katabi,
+                                        and Tommi Jaakkola<br /><span class="pub-venue">AAAI 2019</span></div>
+                                </li>
+                                <li><b>Many-to-Many Beam Alignment in Millimeter Wave Networks</b>
+                                    <div class="pub-entry">Suraj Jog, Jiaming Wang, Junfeng Guan, Thomas Moon, Haitham
+                                        Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">NSDI 2019</span>
+                                    </div>
+                                </li>
+                                <li><b>Ghostbuster: Detecting the Presence of Hidden Eavesdroppers</b>
+                                    <div class="pub-entry">Anadi Chaman, Jiaming Wang, Jiachen Sun, Haitham Hassanieh,
+                                        Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiCom 2018</span></div>
+                                </li>
+                                <li><b>Closing the Gaps in Inertial Motion Tracking</b>
+                                    <div class="pub-entry">Sheng Shen, Mahanth Gowda, Romit Roy Choudhury<br /><span
+                                            class="pub-venue">ACM MobiCom 2018</span></div>
+                                </li>
+                                <li><b>MUTE: Bringing IoT to Noise Cancellation</b>
+                                    <div class="pub-entry">Sheng Shen, Nirupam Roy, Junfeng Guan, Haitham Hassanieh,
+                                        Romit Roy Choudhury<br /><span class="pub-venue">ACM SIGCOMM 2018</span></div>
+                                </li>
+                                <li><b>LiquID: A Wireless Liquid IDentifier</b>
+                                    <div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Yixuan Zhao, Haitham
+                                        Hassanieh, Romit Roy Choudhury<br /><span class="pub-venue">ACM MobiSys
+                                            2018</span></div>
+                                </li>
+                                <li><b>Inaudible Voice Commands: The Long-Range Attack and Defense</b>
+                                    <div class="pub-entry">Nirupam Roy, Sheng Shen, Haitham Hassanieh, Romit Roy
+                                        Choudhury<br /><span class="pub-venue">NSDI 2018</span></div>
+                                </li>
+                                <li><b>RF-Based 3D Skeletons</b>
+                                    <div class="pub-entry">Mingmin Zhao, Yonglong Tian, Hang Zhao, Mohammad Abu
+                                        Alsheikh, Tianhong Li, Rumen Hristov, Zachary Kabelac, Dina Katabi, and Antonio
+                                        Torralba<br /><span class="pub-venue">ACM SIGCOMM 2018</span></div>
+                                </li>
+                                <li><b>Through-Wall Human Pose Estimation Using Radio Signals</b>
+                                    <div class="pub-entry">Mingmin Zhao, Tianhong Li, Mohammad Abu Alsheikh, Yonglong
+                                        Tian, Hang Zhao, Antonio Torralba, and Dina Katabi<br /><span
+                                            class="pub-venue">CVPR 2018</span></div>
+                                </li>
+                                <li><b>If WiFi APs Could Move: A Measurement Study</b>
+                                    <div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy Choudhury, Srihari
+                                        Nelakuditi<br /><span class="pub-venue">IEEE Transactions on Mobile Computing
+                                            2018</span></div>
+                                </li>
+                                <li><b>Technical perspective: Is your WiFi a sensor?</b>
+                                    <div class="pub-entry">Romit Roy Choudhury<br /><span
+                                            class="pub-venue">Communications of the ACM 2018</span></div>
+                                </li>
+                                <li><b>BackDoor: Making Microphones Hear Inaudible Sounds</b>
+                                    <div class="pub-entry">Nirupam Roy, Haitham Hassanieh, Romit Roy
+                                        Choudhury<br /><span class="pub-venue">ACM MobiSys 2017</span></div>
+                                </li>
+                                <li><b>Bringing IoT to Sports Analytics</b>
+                                    <div class="pub-entry">Mahanth Gowda, Ashutosh Dhekne, Sheng Shen, Romit Roy
+                                        Choudhury, Xue Yang, Lei Yang, A. Essanian, S. Golwalkar<br /><span
+                                            class="pub-venue">NSDI 2017</span></div>
+                                </li>
+                                <li><b>Extending Cell Tower Coverage through Drones</b>
+                                    <div class="pub-entry">Ashutosh Dhekne, Mahanth Gowda, Romit Roy
+                                        Choudhury<br /><span class="pub-venue">ACM HotMobile 2017</span></div>
+                                </li>
+                                <li><b>Learning Sleep Stages from Radio Signals: A Conditional Adversarial
+                                        Architecture</b>
+                                    <div class="pub-entry">Mingmin Zhao, Shichao Yue, Dina Katabi, Tommi Jaakkola, and
+                                        Matt Bianchi<br /><span class="pub-venue">ICML 2017</span></div>
+                                </li>
+                                <li><b>Emotion Recognition using Wireless Signals</b>
+                                    <div class="pub-entry">Mingmin Zhao, Fadel Adib, and Dina Katabi<br /><span
+                                            class="pub-venue">ACM MobiCom 2016</span></div>
+                                </li>
+                                <li><b>VeTrack: Real Time Vehicle Tracking in Uninstrumented Indoor Environments</b>
+                                    <div class="pub-entry">Mingmin Zhao, Ruipeng Gao, Tao Ye, Fan Ye, Yizhou Wang, and
+                                        Guojie Luo<br /><span class="pub-venue">ACM SenSys 2015</span></div>
+                                </li>
+                                <li><b>Predictive Encoding of Contextual Relationships for Perceptual Inference,
+                                        Interpolation and Prediction</b>
+                                    <div class="pub-entry">Mingmin Zhao, Chengxu Zhuang, Yizhou Wang, and Tai Sing
+                                        Lee<br /><span class="pub-venue">ICLR 2015</span></div>
+                                </li>
+                                <li><b>Jigsaw: Indoor Floor Plan Reconstruction via Mobile Crowdsensing</b>
+                                    <div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang,
+                                        Kaigui Bian, Tao Wang, and Xiaoming Li<br /><span class="pub-venue">ACM MobiCom
+                                            2014</span></div>
+                                </li>
+                                <li><b>Smartphone-based Real Time Vehicle Tracking in Indoor Parking Structures</b>
+                                    <div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang, and
+                                        Guojie Luo<br /><span class="pub-venue">IEEE Transactions on Mobile
+                                            Computing</span>, 16(7), 2017</div>
+                                </li>
+                                <li><b>Multi-story Indoor Floor Plan Reconstruction via Mobile Crowdsensing</b>
+                                    <div class="pub-entry">Ruipeng Gao, Mingmin Zhao, Tao Ye, Fan Ye, Yizhou Wang,
+                                        Kaigui Bian, Tao Wang, and Xiaoming Li<br /><span class="pub-venue">IEEE
+                                            Transactions on Mobile Computing</span>, 15(6), 2016</div>
+                                </li>
+                                <li><b>Poster Abstract: VeLoc: Finding Your Car in the Parking Lot</b>
+                                    <div class="pub-entry">Mingmin Zhao, Ruipeng Gao, Jiaxu Zhu, Tao Ye, Fan Ye, Yizhou
+                                        Wang, Kaigui Bian, Min Zhang, and Guojie Luo<br /><span class="pub-venue">ACM
+                                            SenSys 2014</span></div>
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+            </article>
+        </section>
+    </div>
+
+</body>
+
+</html>
